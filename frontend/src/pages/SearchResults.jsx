@@ -18,7 +18,7 @@ const SearchResults = () => {
     if(!query) return;
     const fetchSearchResults = async() => {
       try {
-        const res = await axios.get(`${serverUrl}/search?q=${query}` , {withCredentials: true})
+        const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/search?q=${query}` , {withCredentials: true})
         setResults(res.data)
       } catch (error) {
         console.log(error);

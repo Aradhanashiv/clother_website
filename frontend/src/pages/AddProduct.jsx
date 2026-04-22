@@ -70,7 +70,7 @@ const SIZE_OPTIONS = ["S", "M", "L", "XL", "XXL"];
        backend.forEach((file)=>{
         formData.append("productImage" , file)
       })
-      const result = await axios.post(`${serverUrl}/product/add-product` , formData , {withCredentials: true})
+      const result = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/product/add-product` , formData , {withCredentials: true})
       setProductName(""), setFrontend([]), setBackend([]) ,setPrice(""), setCategory(""),setDescription(""), setSizes([]), setMaterial("")
       console.log(result);
       setLoading(false)

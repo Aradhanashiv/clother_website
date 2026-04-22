@@ -24,7 +24,7 @@ const Signup = () => {
     
      try {
        setLoading(true)
-       const result = await axios.post(`${serverUrl}/user/signup` , 
+       const result = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/user/signup` , 
         {name, email, password, mobileNumber, role} , 
         {withCredentials: true})
         dispatch(setUserData(result.data.user))

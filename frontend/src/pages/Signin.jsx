@@ -22,7 +22,7 @@ const Signin = () => {
   const handleSignIn = async () => {
     try {
       setLoading(true)
-      const result = await axios.post(`${serverUrl}/user/signin` , {email, password} , {withCredentials: true})
+      const result = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/user/signin` , {email, password} , {withCredentials: true})
       dispatch(setUserData(result.data.user))
       setEmail(""), setPassword("")
       

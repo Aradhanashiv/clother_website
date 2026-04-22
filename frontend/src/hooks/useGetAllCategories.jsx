@@ -10,7 +10,7 @@ export const useGetAllCategories = () => {
    useEffect(()=>{
     const fetchCategories = async() => {
         try {
-          const result = await axios.get(`${serverUrl}/category/all-category` , {withCredentials:true}) 
+          const result = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/category/all-category` , {withCredentials:true}) 
           console.log(result.data.category);
           dispatch(setCategoryData(result.data.category))
         } catch (error) {

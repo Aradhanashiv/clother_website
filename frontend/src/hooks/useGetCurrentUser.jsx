@@ -10,7 +10,7 @@ export const useGetCurrentUser = () => {
     useEffect(()=>{
     const fetchUser = async () => {
       try {
-        const result = await axios.get(`${serverUrl}/user/user-data` , {withCredentials: true})
+        const result = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/user/user-data` , {withCredentials: true})
         console.log(result.data.user);
         dispatch(setUserData({userData: result.data.user, loading: false}))
       } catch (error) {

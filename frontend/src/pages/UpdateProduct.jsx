@@ -39,7 +39,7 @@ const UpdateProduct = () => {
    useEffect(()=>{
      const fetchProductDetails = async () => {
         try {
-           const result = await axios.get(`${serverUrl}/product/product-details/${id}` , {withCredentials: true}) 
+           const result = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/product/product-details/${id}` , {withCredentials: true}) 
            console.log(result.data.product);
            setCurrentProduct(result.data.product)
           
@@ -74,7 +74,7 @@ const UpdateProduct = () => {
        backend.forEach((file)=>{
         formData.append("productImage" , file)
       })
-      const result = await axios.post(`${serverUrl}/product/update-product/${id}` , formData , {withCredentials: true})
+      const result = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/product/update-product/${id}` , formData , {withCredentials: true})
       setProductName(""), setFrontend([]), setBackend([]) ,setPrice(""), setCategory(""),setDescription(""), setSizes([]), setMaterial("")
       console.log(result);
       setLoading(false)

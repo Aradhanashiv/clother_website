@@ -34,7 +34,7 @@ const Header = () => {
   const setUserSignOut = async () => {
     try {
       setLoading(true)
-      const result = await axios.post(`${serverUrl}/user/signout` , {withCredentials: true})
+      const result = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/user/signout` , {withCredentials: true})
       console.log(result);
       toast.success("User LogOut Successfully")
       dispatch(clearUserData())

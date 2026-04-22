@@ -15,7 +15,7 @@ import SearchResults from './pages/SearchResults.jsx'
 import AddToCart from './pages/AddToCart.jsx'
 import AboutUs from './pages/AboutUs.jsx'
 import TermsConditions from './pages/TermsConditions.jsx'
-export const serverUrl = 'http://localhost:4000'
+// export const serverUrl = 'http://localhost:4000'
 
 const App = () => {
   useGetCurrentUser()

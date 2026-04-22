@@ -47,7 +47,7 @@ const AddCategories = () => {
       backend.forEach((file)=>{
         formData.append("image" , file)
       })
-      const result = await axios.post(`${serverUrl}/category/add-category` , formData , {withCredentials: true})
+      const result = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/category/add-category` , formData , {withCredentials: true})
       setCategoryName(""), setFrontend([]), setBackend([])
       console.log(result);
       setLoading(false)
