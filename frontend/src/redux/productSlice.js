@@ -9,7 +9,7 @@ export const fetchProductsByCategory = createAsyncThunk(
    "product/fetchByCategory" ,
    async (category, thunkAPI) => {
       try{
-         const res = await axios.get(`${serverUrl}/category?category=${category}`)
+         const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/category?category=${category}`)
       return {
          products: res.data.products,
          category
@@ -27,7 +27,7 @@ export const fetchAllProducts = createAsyncThunk(
    "product/fetchAllProducts",
    async (_ , thunkAPI) => {
       try{
-         const res = await axios.get(`${serverUrl}/product/all-products`)
+         const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/product/all-products`)
          return {
             products:res.data.data
          }
