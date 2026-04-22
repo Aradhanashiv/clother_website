@@ -27,6 +27,8 @@ app.use('/category' , categoryRoute)
 app.use('/search', searchRoute)
 
 connectMongoDB()
-app.listen(port, ()=>{
-    console.log(`server started at port:${port}`);
-})
+// app.listen(port, ()=>{
+//     console.log(`server started at port:${port}`);
+// })
+
+export default app
