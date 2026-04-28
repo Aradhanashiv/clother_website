@@ -71,7 +71,7 @@ const Header = () => {
       
         {/* Mobile Menu */}
         {menuOpen && (
-          <ul className="md:hidden absolute top-[70px] left-0 w-full bg-white flex flex-col items-center gap-4 py-4 shadow-md md:hidden text-black font-semibold">
+          <ul className="md:hidden absolute top-[70px] left-0 w-full bg-white flex flex-col items-center gap-4 py-4 md:px-2 shadow-md text-black font-semibold">
             {nav_items.map((item, i) => (
               <Link
                 key={i}
@@ -84,7 +84,7 @@ const Header = () => {
             ))}
           </ul>
         )}
-        <div className="flex items-center px-4 py-2 rounded-lg bg-white gap-4 text-gray-500 shadow-md w-full md:w-auto mt-2 md:mt-0">
+        <div className="flex items-center px-4 py-2 rounded-lg bg-white gap-4 text-gray-500 shadow-md w-[70%] md:w-auto mt-2 md:mt-0">
           <IoSearch onClick={handleSearch} className="cursor-pointer" />
           <input
             type="text"
