@@ -5,6 +5,7 @@ import {useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 import axios from "axios";
 import { serverUrl } from "../App";
 import { toast } from "react-toastify";
@@ -14,6 +15,7 @@ import { clearUserData } from "../redux/userSlice";
 const Header = () => {
   const navigate = useNavigate()
   const dispatch = useDispatch()
+  const [menuOpen, setMenuOpen] = useState(false);
   const {totalQuantiy} = useSelector(state => state.cart)
 
   let nav_items = [ {name:'Home' , path:"/" }, {name:'About Us' , path:"/about-us" }, 
