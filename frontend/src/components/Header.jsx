@@ -60,7 +60,7 @@ const Header = () => {
   ☰
 </div>
 
-              <ul className='text-black flex items-center justify-center gap-5 font-semibold text-gray-600'>
+              <ul className='hidden text-black flex items-center justify-center gap-5 font-semibold text-gray-600'>
                {nav_items.map((item, i) => <Link key={i} to={item.path} className='hover:text-gray-500'>{item.name}</Link>)}
               </ul>
               {/* Mobile Menu */}
