@@ -50,59 +50,32 @@ const Header = () => {
   
 
   return (
-   <section id='nav'>
-  <nav className='w-full min-h-[70px] top-0 bg-white text-white flex flex-wrap md:flex-nowrap items-center justify-between px-4 md:justify-evenly fixed z-40'>
-
-    {/* Logo */}
-    <div className="w-[80px] md:w-[100px]">
-      <img src="/images/clother.png" alt="Logo_Image" />
-    </div>
-
-    {/* Navigation Links */}
-    <ul className='hidden md:flex text-black items-center justify-center gap-5 font-semibold text-gray-600'>
-      {nav_items.map((item, i) =>
-        <Link key={i} to={item.path} className='hover:text-gray-500'>
-          {item.name}
-        </Link>
-      )}
-    </ul>
-
-    {/* Search Bar */}
-    <div className="flex items-center px-3 py-2 rounded-lg bg-white gap-2 text-gray-500 shadow-md w-full md:w-auto mt-2 md:mt-0">
-      <IoSearch onClick={handleSearch} className="cursor-pointer" />
-      <input
-        type="text"
-        name="search"
-        onChange={(e) => setSearchWord(e.target.value)}
-        onKeyDown={(e) => {
-          if (e.key === "Enter") { handleSearch() }
-        }}
-        placeholder="Search for Products"
-        className="w-full md:w-[200px] outline-none"
-      />
-    </div>
-
-    {/* Right Section */}
-    <div className="text-gray-500 flex items-center gap-4 mt-2 md:mt-0">
-
-      <button
-        className="border px-2 py-1 rounded-full bg-pink-500 text-white font-medium text-sm md:text-base"
-        onClick={() => setUserSignOut()}
-      >
-        Sign Out
-      </button>
-
-      <div className="relative cursor-pointer" onClick={() => navigate('/add-to-cart')}>
-        <IoCartOutline size={25} />
-        <span className="absolute top-[-10px] right-[-10px] border rounded-3xl py-0 px-1 bg-pink-700 text-white text-xs">
-          {totalQuantiy}
-        </span>
-      </div>
-
-    </div>
-
-  </nav>
-</section>
+    <section id='nav'>
+        <nav className=' w-full min-h-[70px] top-0 bg-white text-white flex items-center justify-evenly fixed z-40'>
+            <div className="w-[100px]">
+              <img src="/images/clother.png" alt="Logo_Image" />
+             </div>
+              <ul className='text-black flex items-center justify-center gap-5 font-semibold text-gray-600'>
+               {nav_items.map((item, i) => <Link key={i} to={item.path} className='hover:text-gray-500'>{item.name}</Link>)}
+              </ul>
+              <div className="flex items-center px-4 py-2 rounded-lg bg-white gap-4 text-gray-500 shadow-md">
+              <IoSearch onClick={handleSearch} className="cursor-pointer"/>
+              <input type="text" name="search" onChange={(e)=>setSearchWord(e.target.value)}
+                onKeyDown={(e)=>{
+                  if(e.key === "Enter"){handleSearch()}
+              }}
+               placeholder="Search for Products"/>
+            </div>
+            <div className="text-gray-500 flex items-center gap-4">
+               <button className="border px-2 py-1 rounded-full bg-pink-500 text-white font-medium"
+                   onClick={()=>setUserSignOut() }>Sign Out</button>
+                <div className="relative" onClick={()=>navigate('/add-to-cart ')}>
+             <IoCartOutline size={25} />
+             <span className="absolute top-[-10px] right-[-15px] border rounded-3xl py-0 px-1 bg-pink-700 text-white">{totalQuantiy}</span>
+             </div>
+            </div>
+        </nav>
+    </section>
   )
 }
 
