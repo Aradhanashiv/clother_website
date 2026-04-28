@@ -53,16 +53,17 @@ const Header = () => {
   return (
     <section id='nav'>
         <nav className=' w-full min-h-[70px] top-0 bg-white text-white flex items-center justify-evenly fixed z-40'>
-            <div className="w-[100px]">
+            <div className="md:w-[100px] w-[70px]">
               <img src="/images/clother.png" alt="Logo_Image" />
              </div>
-             <div className="md:hidden text-black text-2xl cursor-pointer" onClick={() => setMenuOpen(!menuOpen)}>
-  ☰
-</div>
+            
 
               <ul className='hidden text-black flex items-center justify-center gap-5 font-semibold text-gray-600'>
                {nav_items.map((item, i) => <Link key={i} to={item.path} className='hover:text-gray-500'>{item.name}</Link>)}
               </ul>
+               <div className="md:hidden text-black text-2xl cursor-pointer" onClick={() => setMenuOpen(!menuOpen)}>
+  ☰
+</div>
               {/* Mobile Menu */}
 {menuOpen && (
   <ul className='md:hidden absolute top-[70px] left-0 w-full bg-white flex flex-col items-center gap-4 py-4 shadow-md md:hidden text-black font-semibold'>
@@ -84,7 +85,8 @@ const Header = () => {
                 onKeyDown={(e)=>{
                   if(e.key === "Enter"){handleSearch()}
               }}
-               placeholder="Search for Products"/>
+               placeholder="Search for Products"
+                className="w-full md:w-[200px] outline-none"/>
             </div>
             <div className="text-gray-500 flex items-center gap-4">
                <button className="border px-2 py-1 rounded-full bg-pink-500 text-white font-medium"
