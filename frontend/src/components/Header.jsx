@@ -55,9 +55,28 @@ const Header = () => {
             <div className="w-[100px]">
               <img src="/images/clother.png" alt="Logo_Image" />
              </div>
+             <div className="md:hidden text-black text-2xl cursor-pointer" onClick={() => setMenuOpen(!menuOpen)}>
+  ☰
+</div>
+
               <ul className='text-black flex items-center justify-center gap-5 font-semibold text-gray-600'>
                {nav_items.map((item, i) => <Link key={i} to={item.path} className='hover:text-gray-500'>{item.name}</Link>)}
               </ul>
+              {/* Mobile Menu */}
+{menuOpen && (
+  <ul className='md:hidden absolute top-[70px] left-0 w-full bg-white flex flex-col items-center gap-4 py-4 shadow-md md:hidden text-black font-semibold'>
+    {nav_items.map((item, i) =>
+      <Link
+        key={i}
+        to={item.path}
+        className='hover:text-gray-500'
+        onClick={() => setMenuOpen(false)}
+      >
+        {item.name}
+      </Link>
+    )}
+  </ul>
+)}
               <div className="flex items-center px-4 py-2 rounded-lg bg-white gap-4 text-gray-500 shadow-md">
               <IoSearch onClick={handleSearch} className="cursor-pointer"/>
               <input type="text" name="search" onChange={(e)=>setSearchWord(e.target.value)}
