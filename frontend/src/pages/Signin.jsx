@@ -42,7 +42,6 @@ console.log("userData from redux:", userData);
    navigate('/')
     }
   },[userData])
- console.log("ENV:", import.meta.env.VITE_BACKEND_URL);
   return (
     <div className='min-h-screen  flex items-center justify-center p-4 bg-pink-50'>
       <div className={`bg-white rounded-xl shadow-lg w-full max-w-md p-8 border-[1px] border-pink-600`} >

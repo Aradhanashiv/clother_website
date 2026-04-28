@@ -30,9 +30,9 @@ export const handleSignUp = async (req,res) => {
       const token = createToken(user._id)   
       res.cookie("token" , token, {
         httpOnly: true,
-        secure: false,
+        secure: true,
         maxAge: 7*24*60*60*1000,
-        sameSite: "strict"
+        sameSite: "None"
       })
       return res.status(201).json({success:true, message:"User Created Successfully", user})
      
@@ -57,12 +57,12 @@ export const handleSignIn = async (req,res) => {
         return res.status(401).json({success:false, message: "Invalid Email or Password"})
       }
      const token = createToken(user._id)
-      res.cookie("token" , token, {
-        httpOnly: true,
-        secure: false,
-        maxAge: 7*24*60*60*1000,
-        sameSite: "strict"
-      })
+        res.cookie("token" , token, {
+          httpOnly: true,
+          secure: true,
+          maxAge: 7*24*60*60*1000,
+          sameSite: "None"
+        })
       return res.status(200).json({success:true, message:"User Signed In Successfully", user})
      
     } catch (error) {
