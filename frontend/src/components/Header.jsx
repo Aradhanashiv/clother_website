@@ -84,7 +84,7 @@ const Header = () => {
             ))}
           </ul>
         )}
-        <div className="flex items-center px-4 py-2 rounded-lg bg-white gap-4 text-gray-500 shadow-md w-[70%] md:w-auto mt-2 md:mt-0">
+        <div className="flex items-center px-4 py-2 rounded-lg bg-white gap-4 text-gray-500 shadow-md w-[70%] md:w-full mt-2 md:mt-0">
           <IoSearch onClick={handleSearch} className="cursor-pointer" />
           <input
             type="text"
