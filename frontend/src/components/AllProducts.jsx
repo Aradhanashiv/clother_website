@@ -27,7 +27,7 @@ const AllProducts = () => {
           <div key={index} className="overflow-hidden shadow bg-white/70">
             <ProductsSlider images={product.productImage} />
             <div className="p-5">
-              <p className="font-bold text-lg text-black mt-4">
+              <p className="font-bold md:text-lg text-md text-black mt-4">
                 {product.productName}
               </p>
               <p className="font-semibold">Rs. {product.price}</p>

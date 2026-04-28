@@ -22,11 +22,11 @@ const AddToCartButton = ({cartproduct}) => {
 
   return (
     <div className="flex items-between justify-between mt-5">
-      <button className={`px-4 py-2 text-white text-semibold rounded-lg ${isAdded ? "bg-green-500" : "bg-pink-500"}`}
+      <button className={`md:px-4 md:py-2 px-2 py-1 text-white text-semibold rounded-lg ${isAdded ? "bg-green-500" : "bg-pink-500"}`}
        onClick={() => handleAddtoCart()}>
         {isAdded ? "Go to Cart" : "Add to Cart"}
       </button>
-      <button className="px-4 py-2 bg-gray-500 text-white text-semibold rounded-lg">
+      <button className="md:px-4 md:py-2 px-2 py-1 bg-gray-500 text-white text-semibold rounded-lg">
         {" "}
         Buy Now
       </button>
