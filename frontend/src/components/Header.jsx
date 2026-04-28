@@ -57,7 +57,7 @@ const Header = () => {
   return (
     <section id="nav">
       <nav className=" w-full min-h-[70px] top-0 bg-white text-white flex items-center justify-evenly fixed z-40">
-        <div className="md:w-[100px] w-[70px]">
+        <div className="md:w-[100px] w-[60px]">
           <img src="/images/clother.png" alt="Logo_Image" />
         </div>
 
@@ -84,6 +84,7 @@ const Header = () => {
             ))}
           </ul>
         )}
+
         <div className="flex items-center px-4 py-2 rounded-lg bg-white gap-4 text-gray-500 shadow-md w-[70%] md:w-auto mt-2 md:mt-0">
           <IoSearch onClick={handleSearch} className="cursor-pointer" />
           <input
@@ -96,9 +97,9 @@ const Header = () => {
               }
             }}
             placeholder="Search for Products"
-            // className="w-full md:w-[200px] outline-none"
           />
         </div>
+        
         <div className="hidden md:flex text-gray-500  items-center gap-4">
           <button
             className="border px-2 py-1 rounded-full bg-pink-500 text-white font-medium"
