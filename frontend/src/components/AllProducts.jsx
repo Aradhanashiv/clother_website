@@ -22,7 +22,7 @@ const AllProducts = () => {
       <h1 className="font-semibold text-5xl text-center mb-8 text-pink-800">
         Your Fashion, Your Style
       </h1>
-      <div className="grid grid-cols-4 gap-5 ">
+      <div className="grid md:grid-cols-4 grid-cols-2 gap-5 ">
         {allProducts.map((product, index) => (
           <div key={index} className="overflow-hidden shadow bg-white/70">
             <ProductsSlider images={product.productImage} />
@@ -31,16 +31,7 @@ const AllProducts = () => {
                 {product.productName}
               </p>
               <p className="font-semibold">Rs. {product.price}</p>
-              {/* <div className="flex items-between justify-between mt-5">
-                <button disabled={itemAdded.includes(product._id)}
-                 className={`px-4 py-2 text-white text-semibold rounded-lg
-                ${itemAdded.includes(product._id) ? "bg-green-500" : "bg-pink-500"}`}
-                 onClick={()=>handleAddtoCart(product)}>
-                  {itemAdded.includes(product._id)? "Go to Cart" : "Add to Cart"}
-                </button>
-                <button className="px-4 py-2 bg-gray-500 text-white text-semibold rounded-lg"> Buy Now</button>
-              </div> */}
-              <AddToCartButton cartproduct={product}/>
+            <AddToCartButton cartproduct={product}/>
             </div>
           </div>
         ))}
