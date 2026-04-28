@@ -96,7 +96,7 @@ const Header = () => {
               }
             }}
             placeholder="Search for Products"
-            className="w-full md:w-[200px] outline-none"
+            // className="w-full md:w-[200px] outline-none"
           />
         </div>
         <div className="hidden md:flex text-gray-500  items-center gap-4">
