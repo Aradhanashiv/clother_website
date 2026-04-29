@@ -114,7 +114,7 @@ const Header = () => {
             </span>
           </div>
             <button
-            className="border px-2 py-1 rounded-full bg-pink-500 text-white font-medium md:text-xl text-xs"
+            className="border px-2 py-1 rounded-full bg-pink-500 text-white font-medium md:text-sm text-xs"
             onClick={() => setUserSignOut()}
           >Sign Out </button>
         </div>
