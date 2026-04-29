@@ -17,7 +17,7 @@ const ProductsSlider = ({images}) => {
     {images.map((image, index) => 
     <div key={index} className='md:h-95 w-full h-70 overflow-hidden'>       
     <img src={image} key={index} 
-    className="w-full h-105 object-cover transition-transform duration-300 ease-out hover:scale-105" alt="Midi Dress" />         
+    className="w-full h-full object-cover transition-transform duration-300 ease-out hover:scale-105" alt="Midi Dress" />         
     </div>
     )}
     </Slider>
