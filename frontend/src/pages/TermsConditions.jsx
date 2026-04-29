@@ -90,7 +90,7 @@ const TermsConditions = () => {
       <h1 className="mt-5 font-semibold text-4xl text-center mb-8 text-pink-800">
        Terms and Conditions - Clother
       </h1>
-      <div className='w-[70%] m-auto text-sm'>
+      <div className='md:w-[70%] w-full m-auto text-sm'>
    {termsData.map((item,index) => (
     <div key={index} className='mt-2'>
         <p className='font-bold text-medium'>{index+1}. {item.title}</p>
