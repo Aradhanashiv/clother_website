@@ -92,7 +92,7 @@ const Header = () => {
           </div>
         )}
 
-        <div className="flex items-center px-4 py-2 rounded-lg bg-white gap-4 text-gray-500 shadow-md w-[70%] md:w-auto mt-2 md:mt-0">
+        <div className="flex items-center px-4 py-2 rounded-lg bg-white gap-4 text-gray-500 shadow-md w-[50%] md:w-auto mt-2 md:mt-0">
           <IoSearch onClick={handleSearch} className="cursor-pointer" />
           <input
             type="text"
@@ -121,11 +121,12 @@ const Header = () => {
             </span>
           </div>
         </div>
-          <div className="md:hidden text-black text-2xl cursor-pointer"
+
+        <div className="md:hidden text-black text-2xl cursor-pointer"
            onClick={() => setMenuOpen(!menuOpen)} >
            {menuOpen ? <RxCross1 size={20}/>:  <FiMenu size={20}/>} 
             
-          </div>
+         </div>
       </nav>
     </section>
   );
