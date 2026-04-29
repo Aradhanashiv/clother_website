@@ -61,7 +61,7 @@ const Header = () => {
   return (
     <section id="nav">
       <nav className=" w-full min-h-[70px] top-0 bg-white text-white flex items-center justify-evenly fixed z-40">
-        <div className="md:w-[100px] hidden">
+        <div className="md:w-[100px]">
           <img src="/images/clother.png" alt="Logo_Image" />
         </div>
 
