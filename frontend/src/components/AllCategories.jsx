@@ -16,7 +16,7 @@ const AllCategories = () => {
       <section id='categories'>
       <div className='w-full h-full bg-pink-100 p-8 '>
         <h1 className='font-bold text-5xl text-center mb-8 text-transparent bg-clip-text bg-gradient-to-tr from-cyan-500 to-[#fc00ff] animate-pulse'>Fusion! Find Best</h1>
-        <div className="w-[60%] h-[50%] flex items-center mx-auto ">
+        <div className="md:w-[60%] w-full h-[50%] flex items-center mx-auto ">
         {categoryData.map((category,index) => 
             <div key={index} className="flex items-center justify-center overflow-hidden rounded-sm mx-auto" 
             onClick={()=>navigate(`/category?category=${category.categoryName}`)}>
