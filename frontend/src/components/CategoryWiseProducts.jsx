@@ -31,9 +31,9 @@ const CategoryWiseProducts = ({}) => {
     <Header/>
       
     <section className='mt-[70px] w-full min-h-screen bg-pink-50'>
-      <button className="p-6" onClick={() => navigate("/")}>
+      <button className="px-6 py-4" onClick={() => navigate("/")}>
             <FaBackward size={25} />
-          </button>
+          </button> 
         <h1 className='font-bold text-5xl text-pink-800 text-center mb-[20px] p-[30px]'>Your Fashion, Your Style</h1>
         <div className="grid md:grid-cols-4 grid-cols-2 gap-5 mx-8">
          {myProductsData.map((product,index) => 
