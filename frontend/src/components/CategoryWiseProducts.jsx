@@ -31,7 +31,7 @@ const CategoryWiseProducts = ({}) => {
     <Header/>
     <section className='mt-[70px] w-full min-h-screen bg-pink-50'>
         <h1 className='font-bold text-5xl text-pink-800 text-center mb-[20px] p-[30px]'>Your Fashion, Your Style</h1>
-        <div className="grid md:grid-cols-5 grid-cols-2 gap-5 mx-8 ">
+        <div className="grid md:grid-cols-4 grid-cols-2 gap-5 mx-8 ">
          {myProductsData.map((product,index) => 
             <div key={index} className="overflow-hidden rounded-xl">
                <ProductsSlider images={product.productImage}/>
