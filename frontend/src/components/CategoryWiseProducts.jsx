@@ -8,6 +8,8 @@ import { useState } from 'react'
 import { addtoCart } from '../redux/cartSlice.js'
 import AddToCartButton from './AddToCartButton.jsx'
 import Header from './Header.jsx'
+import { useNavigate } from "react-router-dom";
+
 
 const CategoryWiseProducts = ({}) => {
    const navigate = useNavigate();

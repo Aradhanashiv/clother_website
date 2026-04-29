@@ -8,6 +8,7 @@ import { serverUrl } from '../App'
 import { BiSad } from "react-icons/bi";
 import { FaBackward } from "react-icons/fa";
 import AddToCartButton from '../components/AddToCartButton.jsx'
+import { useNavigate } from "react-router-dom";
 
 
 const SearchResults = () => {
