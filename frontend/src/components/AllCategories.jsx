@@ -23,7 +23,7 @@ const AllCategories = () => {
               <div className="relative">
                <p className='absolute bottom-20 right-5 flex items-center border border-4 justify-center bg-pink-500 px-3 py-1 font-semibold text-white md:text-2xl text-xl mt-4 rounded'>
                For {category.categoryName} <MdArrowForwardIos/></p>
-              <img src={category.image}  className={`md:h-[75vh] h-full`} alt={`${category.categoryName}-Category`}   />
+              <img src={category.image}  className={`md:h-[75vh] h-[50vh]`} alt={`${category.categoryName}-Category`}   />
               </div>
               {/* <p className='font-bold text-gray-800 mt-4'>{category.categoryName}</p> */}
               </div>
