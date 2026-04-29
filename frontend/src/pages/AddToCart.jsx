@@ -21,7 +21,7 @@ const totalPrice = products.reduce((total, item) => {
   return (
     <section id="addToCart">
       <div className="w-full min-h-screen bg-pink-50 p-5">
-          <button className="px-6 py-4" onClick={() => navigate("/")}> <FaBackward size={25} /> </button> 
+          <button className="md:px-6 md:py-4 py-2 px-2" onClick={() => navigate("/")}> <FaBackward size={25} /> </button> 
       <h1 className=" font-semibold text-4xl text-center text-pink-800 mb-8">
         Items in Your Cart
       </h1>
