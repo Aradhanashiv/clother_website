@@ -106,7 +106,7 @@ const Header = () => {
           />
         </div>
         
-        <div className="flex text-gray-500 items-center gap-4">
+        <div className="flex text-gray-500 items-center gap-5">
           <div className="relative" onClick={() => navigate("/add-to-cart ")}>
             <IoCartOutline size={25} />
             <span className="absolute top-[-10px] right-[-15px] border rounded-3xl py-0 px-1 bg-pink-700 text-white">
