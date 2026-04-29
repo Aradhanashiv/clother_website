@@ -107,7 +107,7 @@ const Header = () => {
           />
         </div>
         
-        <div className="hidden md:flex text-gray-500  items-center gap-4">
+        <div className="flex text-gray-500  items-center gap-4">
           <button
             className="border px-2 py-1 rounded-full bg-pink-500 text-white font-medium"
             onClick={() => setUserSignOut()}
