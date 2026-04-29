@@ -21,12 +21,11 @@ const totalPrice = products.reduce((total, item) => {
   return (
     <section id="addToCart">
       <div className="w-full min-h-screen bg-pink-50 p-5">
-          <button className="px-6 py-4" onClick={() => navigate("/")}>
-                          <FaBackward size={25} />
-                        </button> 
+          <button className="px-6 py-4" onClick={() => navigate("/")}> <FaBackward size={25} /> </button> 
       <h1 className=" font-semibold text-4xl text-center text-pink-800 mb-8">
         Items in Your Cart
       </h1>
+      <div className="flex">
        <div className="md:w-[80%] w-full m-auto flex justify-start items-center">
           <MdCheckBox size={25} className="text-pink-500 m-1"/>
           <p className="py-5 text-xl font-bold text-gray-800">{totalQuantiy} TOTAL ITEMS IN YOUR CART</p>
@@ -108,6 +107,7 @@ const totalPrice = products.reduce((total, item) => {
           <p>Total Amount</p>
           <p>{totalPrice}</p>
           </div>
+       </div>
        </div>
        </div>
     </div>

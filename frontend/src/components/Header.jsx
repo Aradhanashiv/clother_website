@@ -119,7 +119,7 @@ const Header = () => {
           >Sign Out </button>
         </div>
 
-        <div className="md:hidden text-black text-2xl cursor-pointer"
+        <div className="md:hidden text-black cursor-pointer"
            onClick={() => setMenuOpen(!menuOpen)} >
            {menuOpen ? <RxCross1 size={20}/>:  <FiMenu size={20}/>} 
             
