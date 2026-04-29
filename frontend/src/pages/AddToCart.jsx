@@ -25,11 +25,12 @@ const totalPrice = products.reduce((total, item) => {
       <h1 className=" font-semibold text-4xl text-center text-pink-800 mb-8">
         Items in Your Cart
       </h1>
-      <div className="flex">
+    
        <div className="md:w-[80%] w-full m-auto flex justify-start items-center">
           <MdCheckBox size={25} className="text-pink-500 m-1"/>
           <p className="py-5 text-xl font-bold text-gray-800">{totalQuantiy} TOTAL ITEMS IN YOUR CART</p>
         </div>
+          <div className="flex items-center">
        <div className="m-auto md:w-[80%] w-full flex"> 
       <div className="w-full rounded-lg px-2 py-3 m-auto">
       
