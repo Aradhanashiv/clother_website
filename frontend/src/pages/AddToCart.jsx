@@ -67,7 +67,7 @@ const totalPrice = products.reduce((total, item) => {
         ))}
 
         {showConfirm && selectedId &&  <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
-         <div className="m-2 bg-white/95 shadow md:w-[35%] w-full rounded m-auto px-3 py-4">
+         <div className="bg-white/95 shadow md:w-[35%] w-[90%] rounded m-auto px-3 py-4">
          <div className="flex">
           <img src={selectedId.productImage[0]} alt="" className="w-10"/>
           <div className="px-3">
