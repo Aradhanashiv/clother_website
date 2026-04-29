@@ -123,7 +123,7 @@ const Header = () => {
         </div>
           <div className="md:hidden text-black text-2xl cursor-pointer"
            onClick={() => setMenuOpen(!menuOpen)} >
-           {menuOpen ? <RxCross size={20}/>:  <FiMenu size={20}/>} 
+           {menuOpen ? <RxCross1 size={20}/>:  <FiMenu size={20}/>} 
             
           </div>
       </nav>
