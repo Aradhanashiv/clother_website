@@ -14,7 +14,7 @@ const SearchResults = () => {
 
   const query = new URLSearchParams(useLocation().search).get("q")
   const [results, setResults] = useState([])
-     const navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(()=>{
     if(!query) return;
