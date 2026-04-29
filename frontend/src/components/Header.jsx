@@ -107,16 +107,16 @@ const Header = () => {
         </div>
         
         <div className="flex text-gray-500 items-center gap-4">
-          <button
-            className="border px-2 py-1 rounded-full bg-pink-500 text-white font-medium md:text-xl text-xs"
-            onClick={() => setUserSignOut()}
-          >Sign Out </button>
           <div className="relative" onClick={() => navigate("/add-to-cart ")}>
             <IoCartOutline size={25} />
             <span className="absolute top-[-10px] right-[-15px] border rounded-3xl py-0 px-1 bg-pink-700 text-white">
               {totalQuantiy}
             </span>
           </div>
+            <button
+            className="border px-2 py-1 rounded-full bg-pink-500 text-white font-medium md:text-xl text-xs"
+            onClick={() => setUserSignOut()}
+          >Sign Out </button>
         </div>
 
         <div className="md:hidden text-black text-2xl cursor-pointer"
