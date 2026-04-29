@@ -3,10 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { IncreaseItemQuantity, DecreaseQuantity, removeFromCart } from "../redux/cartSlice";
 import { MdCheckBox } from "react-icons/md";
 import { RxCross2 } from "react-icons/rx";
+import { useNavigate } from "react-router-dom";
+import { FaBackward } from "react-icons/fa";
 
 
 const AddToCart = () => {
   const dispatch = useDispatch()
+  const navigate = useNavigate();
   const { products, totalQuantiy } = useSelector((state) => state.cart);
   const [selectedId, setSelectedId] = useState(null)
   const [showConfirm, setShowConfirm] = useState(false)
@@ -18,14 +21,17 @@ const totalPrice = products.reduce((total, item) => {
   return (
     <section id="addToCart">
       <div className="w-full min-h-screen bg-pink-50 p-5">
+          <button className="px-6 py-4" onClick={() => navigate("/")}>
+                          <FaBackward size={25} />
+                        </button> 
       <h1 className=" font-semibold text-4xl text-center text-pink-800 mb-8">
         Items in Your Cart
       </h1>
-       <div className=" w-[80%]  m-auto flex justify-start items-center">
+       <div className="md:w-[80%] w-full m-auto flex justify-start items-center">
           <MdCheckBox size={25} className="text-pink-500 m-1"/>
           <p className="py-5 text-xl font-bold text-gray-800">{totalQuantiy} TOTAL ITEMS IN YOUR CART</p>
         </div>
-       <div className="m-auto w-[80%] flex"> 
+       <div className="m-auto md:w-[80%] w-full flex"> 
       <div className="w-full rounded-lg px-2 py-3 m-auto">
       
         {products.map((item, i) => (
