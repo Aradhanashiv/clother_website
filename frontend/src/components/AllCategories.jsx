@@ -21,7 +21,7 @@ const AllCategories = () => {
             <div key={index} className="flex items-center justify-center overflow-hidden rounded-sm mx-auto" 
             onClick={()=>navigate(`/category?category=${category.categoryName}`)}>
               <div className="relative">
-               <p className='absolute bottom-20 right-5 flex items-center border border-4 justify-center bg-pink-500 px-3 py-1 font-semibold text-white md:text-2xl text-xl mt-4 rounded'>
+               <p className='absolute bottom-20 right-5 flex items-center border border-4 justify-center bg-pink-500 px-3 py-1 font-semibold text-white md:text-2xl text-md mt-4 rounded'>
                For {category.categoryName} <MdArrowForwardIos/></p>
               <img src={category.image}  className={`md:h-[75vh] h-[50vh]`} alt={`${category.categoryName}-Category`}   />
               </div>
