@@ -6,6 +6,7 @@ import Header from '../components/Header.jsx'
 import axios from 'axios'
 import { serverUrl } from '../App'
 import { BiSad } from "react-icons/bi";
+import { FaBackward } from "react-icons/fa";
 import AddToCartButton from '../components/AddToCartButton.jsx'
 
 
@@ -13,6 +14,7 @@ const SearchResults = () => {
 
   const query = new URLSearchParams(useLocation().search).get("q")
   const [results, setResults] = useState([])
+     const navigate = useNavigate();
 
   useEffect(()=>{
     if(!query) return;
@@ -31,6 +33,9 @@ const SearchResults = () => {
     <>
     <Header/>
       <section className='mt-[70px] w-full min-h-screen bg-pink-50 p-5 '>
+         <button className="px-6 py-4" onClick={() => navigate("/")}>
+            <FaBackward size={25} />
+          </button> 
         <h1 className='font-semibold text-5xl text-center mb-8 text-pink-800'>Your Fashion, Your Style</h1>
         {results.length === 0 ? (
           <div className='flex items-center justify-center font-semibold text-xl text-green-800'>

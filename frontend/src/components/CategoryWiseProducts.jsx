@@ -10,6 +10,7 @@ import AddToCartButton from './AddToCartButton.jsx'
 import Header from './Header.jsx'
 
 const CategoryWiseProducts = ({}) => {
+   const navigate = useNavigate();
    const dispatch = useDispatch()
    const [searchParams] = useSearchParams()
    const category = searchParams.get("category")
