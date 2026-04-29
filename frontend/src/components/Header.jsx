@@ -9,6 +9,10 @@ import axios from "axios";
 import { serverUrl } from "../App";
 import { toast } from "react-toastify";
 import { clearUserData } from "../redux/userSlice";
+import { RxCross1 } from "react-icons/rx";
+import { FiMenu } from "react-icons/fi";
+
+
 
 const Header = () => {
   const navigate = useNavigate();
@@ -71,6 +75,8 @@ const Header = () => {
       
         {/* Mobile Menu */}
         {menuOpen && (
+          <div>
+          <RxCross1/>
           <ul className="md:hidden absolute top-[70px] left-0 w-full bg-white flex flex-col items-center gap-4 py-4 md:px-2 shadow-md text-black font-semibold">
             {nav_items.map((item, i) => (
               <Link
@@ -83,6 +89,7 @@ const Header = () => {
               </Link>
             ))}
           </ul>
+          </div>
         )}
 
         <div className="flex items-center px-4 py-2 rounded-lg bg-white gap-4 text-gray-500 shadow-md w-[70%] md:w-auto mt-2 md:mt-0">
@@ -114,12 +121,11 @@ const Header = () => {
             </span>
           </div>
         </div>
-          <div
-          className="md:hidden text-black text-2xl cursor-pointer"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          ☰
-        </div>
+          <div className="md:hidden text-black text-2xl cursor-pointer"
+           onClick={() => setMenuOpen(!menuOpen)} >
+           {menuOpen ? <RxCross size={20}/>:  <FiMenu size={20}/>} 
+            
+          </div>
       </nav>
     </section>
   );
