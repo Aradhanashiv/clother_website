@@ -30,8 +30,8 @@ const totalPrice = products.reduce((total, item) => {
           <MdCheckBox size={25} className="text-pink-500 m-1"/>
           <p className="py-5 text-xl font-bold text-gray-800">{totalQuantiy} TOTAL ITEMS IN YOUR CART</p>
         </div>
-        <div className="flex items-center">
-       <div className="m-auto md:w-[80%] w-full flex"> 
+        <div className="">
+       <div className="flex items-center m-auto md:w-[80%] w-full flex"> 
       <div className="w-full rounded-lg px-2 py-3 m-auto">
       
         {products.map((item, i) => (
@@ -90,7 +90,7 @@ const totalPrice = products.reduce((total, item) => {
       
       </div>
        
-       <div className="w-[30%] h-[30%] rounded border  border-gray-300 bg-white/90 px-5 py-4 mt-[20px]">
+       <div className="w-full rounded border  border-gray-300 bg-white/90 px-5 py-4 mt-[20px]">
           <p className="font-bold py-3 text-gray-800">Price Details</p>
           <div className="flex items-center justify-between">
           <p>Total MRP</p>
