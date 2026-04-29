@@ -92,7 +92,7 @@ const Header = () => {
         )}
 
         <div className="flex items-center px-4 py-2 rounded-lg bg-white gap-4 text-gray-500 shadow-md w-[60%] md:w-auto mt-2 md:mt-0">
-          <IoSearch onClick={handleSearch} className="cursor-pointer" />
+          <IoSearch onClick={handleSearch} size={20} className="cursor-pointer" />
           <input
             type="text"
             name="search"
@@ -114,7 +114,7 @@ const Header = () => {
             </span>
           </div>
             <button
-            className="border px-2 py-1 rounded-full bg-pink-500 text-white font-medium md:text-sm text-xs"
+            className="hidden md:block border px-2 py-1 rounded-full bg-pink-500 text-white font-medium md:text-sm text-xs"
             onClick={() => setUserSignOut()}
           >Sign Out </button>
         </div>
