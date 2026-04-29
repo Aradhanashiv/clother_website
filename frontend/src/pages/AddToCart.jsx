@@ -42,7 +42,7 @@ const totalPrice = products.reduce((total, item) => {
             <div className="w-full px-4">
               <p className="font-bold">{item.productName}</p>
               <p className="text-gray-700">
-                {item.description.split(" ").slice(0, 10).join(" ")}...
+                {item.description.split(" ").slice(0, 7).join(" ")}...
               </p>
               <div className="flex items-center">
               <button className="px-2 py-1  text-white text-semibold rounded-full bg-pink-500 mt-2"
@@ -67,7 +67,7 @@ const totalPrice = products.reduce((total, item) => {
         ))}
 
         {showConfirm && selectedId &&  <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
-         <div className="m-2 bg-white/95 shadow w-[35%] rounded m-auto px-3 py-4">
+         <div className="m-2 bg-white/95 shadow md:w-[35%] w-full rounded m-auto px-3 py-4">
          <div className="flex">
           <img src={selectedId.productImage[0]} alt="" className="w-10"/>
           <div className="px-3">
