@@ -1,8 +1,11 @@
 import React from 'react'
 import Header from '../components/Header'
 import Footer from './Footer';
+import { useNavigate } from "react-router-dom";
+import { FaBackward } from "react-icons/fa";
 
 const TermsConditions = () => {
+  const navigate = useNavigate();
     const termsData = [
   {
     title: "Acceptance of Terms",
@@ -86,6 +89,9 @@ const TermsConditions = () => {
     <>
     <Header/>
      <section id='termCondition'>
+        <button className="px-6 py-4" onClick={() => navigate("/")}>
+                  <FaBackward size={25} />
+                </button> 
     <div className="mt-[70px] w-full min-h-screen bg-pink-50 p-5 ">
       <h1 className="mt-5 font-semibold text-4xl text-center mb-8 text-pink-800">
        Terms and Conditions - Clother

@@ -1,11 +1,17 @@
 import React from 'react'
 import Header from '../components/Header'
+import { useNavigate } from "react-router-dom";
+import { FaBackward } from "react-icons/fa";
 
 const AboutUs = () => {
+  const navigate = useNavigate();
   return (
     <>
     <Header/>
      <section id='AboutUs'>
+        <button className="px-6 py-4" onClick={() => navigate("/")}>
+                  <FaBackward size={25} />
+                </button> 
     <div className="mt-[70px] w-full min-h-screen bg-pink-50 p-5 ">
       <h1 className="mt-5 font-semibold text-4xl text-center mb-8 text-pink-800">
         About Us - Clother
