@@ -14,14 +14,14 @@ const AllCategories = () => {
     <>
      {/* <Header/> */}
       <section id='categories'>
-      <div className='w-full h-full bg-pink-100 p-8 '>
+      <div className='w-full h-full bg-pink-100 md:p-8 p-5'>
         <h1 className='font-bold text-5xl text-center mb-8 text-transparent bg-clip-text bg-gradient-to-tr from-cyan-500 to-[#fc00ff] animate-pulse'>Fusion! Find Best</h1>
         <div className="md:w-[60%] w-full h-[50%] flex items-center mx-auto ">
         {categoryData.map((category,index) => 
             <div key={index} className="flex items-center justify-center overflow-hidden rounded-sm mx-auto" 
             onClick={()=>navigate(`/category?category=${category.categoryName}`)}>
               <div className="relative">
-               <p className='absolute bottom-20 right-5 flex items-center border border-4  justify-center bg-pink-500 px-3 py-1 font-semibold text-white text-2xl mt-4 rounded'>
+               <p className='absolute bottom-20 right-5 flex items-center border border-4 justify-center bg-pink-500 px-3 py-1 font-semibold text-white md:text-2xl text-xl mt-4 rounded'>
                For {category.categoryName} <MdArrowForwardIos/></p>
               <img src={category.image}  className={`h-[75vh]`} alt={`${category.categoryName}-Category`}   />
               </div>
