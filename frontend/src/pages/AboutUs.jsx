@@ -10,7 +10,7 @@ const AboutUs = () => {
       <h1 className="mt-5 font-semibold text-4xl text-center mb-8 text-pink-800">
         About Us - Clother
       </h1>
-      <div className='w-[70%] m-auto text-gray-600 text-sm'>
+      <div className='md:w-[70%] w-full m-auto text-gray-600 text-sm'>
     <p><b>Welcome to Clother,</b> your go-to destination for stylish, comfortable, and affordable fashion. At Clother, we believe that clothing is more than just fabric—it’s a powerful form of self-expression. The way you dress reflects your personality, mood, and confidence, and we’re here to help you express yourself effortlessly.</p>
 
 <p className='mt-2'><b>Our mission is simple:</b> to make trendy, high-quality clothing accessible to everyone without compromising on style or comfort. Whether you're searching for everyday essentials, casual wear, or statement pieces that stand out, Clother offers a carefully curated collection to suit every occasion and preference.</p>
