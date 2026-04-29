@@ -37,7 +37,7 @@ const SearchResults = () => {
             <BiSad size={25} /><p className='px-2'>No Results to Shown </p>
             </div>
         ):(
-         <div className="grid grid-cols-4 gap-5 ">
+         <div className="grid md:grid-cols-4 grid-cols-2 gap-5 ">
          {results.map((product,index) => 
             <div key={index} className="overflow-hidden shadow bg-white/70">
                <ProductsSlider images={product.productImage}/>

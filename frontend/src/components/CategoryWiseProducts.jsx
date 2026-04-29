@@ -1,4 +1,4 @@
-// import useGetAllProducts from '../hooks/useGetAllProducts.jsx'
+import { FaBackward } from "react-icons/fa";
 import { useDispatch, useSelector } from 'react-redux'
 import ProductsSlider from './ProductsSlider.jsx'
 import { use, useEffect } from 'react'
@@ -29,12 +29,15 @@ const CategoryWiseProducts = ({}) => {
   return (
     <>
     <Header/>
+      <button className="p-6" onClick={() => navigate("/")}>
+            <FaBackward size={25} />
+          </button>
     <section className='mt-[70px] w-full min-h-screen bg-pink-50'>
         <h1 className='font-bold text-5xl text-pink-800 text-center mb-[20px] p-[30px]'>Your Fashion, Your Style</h1>
-        <div className="grid md:grid-cols-4 grid-cols-2 gap-5 mx-8 ">
+        <div className="grid md:grid-cols-4 grid-cols-2 gap-5 mx-8">
          {myProductsData.map((product,index) => 
             <div key={index} className="overflow-hidden rounded-xl">
-               <ProductsSlider images={product.productImage}/>
+               <ProductsSlider images={product.productImage} cl/>
                 <p className='font-bold text-gray-800 mt-4'>{product.productName}</p>
                 <p className='font-semibold'>{product.price}</p>
                 <AddToCartButton cartproduct={product}/>
