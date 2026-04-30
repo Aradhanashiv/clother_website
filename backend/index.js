@@ -4,7 +4,6 @@ import {connectMongoDB} from './config/db.js'
 import cors from 'cors'
 import cookieParser from "cookie-parser"
 import userRoute from './routes/userRoute.js'
-// import homeRoute from './routes/homeRoute.js'
 import productRoute from './routes/productRoute.js'
 import categoryRoute from './routes/categoryRoute.js'
 import searchRoute from './routes/searchRoute.js'
@@ -31,4 +30,3 @@ app.listen(port, ()=>{
     console.log(`server started at port:${port}`);
 })
 
-// export default app

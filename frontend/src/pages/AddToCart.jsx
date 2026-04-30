@@ -11,7 +11,7 @@ const AddToCart = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate();
   const {userData} = useSelector(state => state.user)
-  const { products, totalQuantiy } = useSelector((state) => state.cart);
+  const {products, totalQuantiy} = useSelector((state) => state.cart);
   const [selectedId, setSelectedId] = useState(null)
   const [showConfirm, setShowConfirm] = useState(false)
 
@@ -23,7 +23,7 @@ const totalPrice = products.reduce((total, item) => {
   return (
     <section id="addToCart">
       <div className="w-full min-h-screen bg-pink-50 p-5">
-          <button className="md:px-6 md:py-4 py-2 px-2" onClick={() => navigate("/")}> <FaBackward size={25} /> </button> 
+      <button className="md:px-6 md:py-4 py-2 px-2" onClick={() => navigate("/")}> <FaBackward size={25} /> </button> 
       <h1 className=" font-semibold text-4xl text-center text-pink-800 mb-8">
         Items in Your Cart
       </h1>
@@ -32,7 +32,7 @@ const totalPrice = products.reduce((total, item) => {
           <MdCheckBox size={25} className="text-pink-500 m-1"/>
           <p className="py-5 text-xl font-bold text-gray-800">{totalQuantiy} TOTAL ITEMS IN YOUR CART</p>
         </div>
-         <div className="flex flex-col items-center m-auto md:w-[80%] w-full flex"> 
+      <div className="flex flex-col items-center m-auto md:w-[80%] w-full flex"> 
       <div className="w-full rounded-lg px-2 py-3 m-auto">
       
         {products.map((item, i) => (
@@ -110,7 +110,8 @@ const totalPrice = products.reduce((total, item) => {
           <p>{totalPrice}</p>
           </div>
           <div><button className="bg-pink-500 border-none px-4 py-2 " 
-          onClick={!userData ? navigate=('/'): ()=>{}}>Place Order</button></div>
+          onClick={!userData ? navigate=('/'): ()=>{}}>Place Order</button>
+          </div>
        </div>
        </div>
     </div>
