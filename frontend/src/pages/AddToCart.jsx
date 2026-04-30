@@ -102,17 +102,19 @@ const totalPrice = products.reduce((total, item) => {
           <p>Discount</p>
           <p>0</p>
           </div>
+            <div className="text-center mt-5"><button className="bg-pink-700 border-none px-6 py-2 text-white rounded-lg font-semibold " 
+          onClick={!userData ? ()=> navigate('/signin'): ()=>{}}>Place Order</button>
+          </div>
            <div className="flex items-center justify-between mt-3">
           <p>Platform fee</p>
           <p>0</p>
           </div>
+          
            <div className="flex items-center justify-between mt-3 border-t border-gray-500">
           <p>Total Amount</p>
           <p>{totalPrice}</p>
           </div>
-          <div className="text-center mt-5"><button className="bg-pink-700 border-none px-6 py-2 text-white rounded-lg font-semibold " 
-          onClick={!userData ? ()=> navigate('/signin'): ()=>{}}>Place Order</button>
-          </div>
+        
        </div>
        </div>
     </div>
