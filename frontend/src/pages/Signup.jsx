@@ -13,7 +13,7 @@ const Signup = () => {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const [mobileNumber, setMobileNumber] = useState("")
-  const [role, setRole] = useState("user")
+  // const [role, setRole] = useState("user")
   const [err, setErr] = useState("")
   const [loading, setLoading] = useState(false)
   const navigate = useNavigate()
@@ -28,7 +28,7 @@ const Signup = () => {
         {name, email, password, mobileNumber, role} , 
         {withCredentials: true})
         dispatch(setUserData(result.data.user))
-        setName(""), setEmail(""), setPassword(""), setMobileNumber(""), setRole("")
+        setName(""), setEmail(""), setPassword(""), setMobileNumber("")
         toast.success("User SignedUp Successfully", {autoClose: 3000})
         navigate('/signin')
         setLoading(false)
@@ -73,14 +73,14 @@ const Signup = () => {
              value={mobileNumber} onChange={(e)=>setMobileNumber(e.target.value)}/>
              </div>
 
-              <div className='mb-3'>  
+              {/* <div className='mb-3'>  
               <label htmlFor="Role" className='block text-gray-700 font-medium mb-1'>Select Role</label>
               <div className="flex justify-left gap-4">
               { ['admin' , 'user'].map((role,i) =><button key={i} className="border px-5 py-1 rounded-xl bg-pink-700 font-semibold text-white 
               shadow-lg hover:shadow-xl hover:bg-white/70 hover:border-pink-600 hover:bg-pink-50 hover:text-black transition-all duration-300" 
               onClick={()=>setRole(role)}>{role}</button> )}
               </div>
-              </div>
+              </div> */}
               
     
             <button type='submit'

@@ -17,25 +17,26 @@ const userSchema = new Schema({
     mobileNumber: {
        type: Number,
        required: true
-    },
-    role: {
-        type: String,
-        enum: ['admin' , 'user'],
-        required: true
-    },
-    isOtpVerified: {
-        type: Boolean,
-        default: false
-    },
-    resetOtp: {
-        type: String
-    },
-    otpExpires: {
-        type:Date
-    } 
+    }
 }, {timestamps: true}     
 )
 
 const User = model('User', userSchema)
 
 export default User
+
+ // role: {
+    //     type: String,
+    //     enum: ['admin' , 'user'],
+    //     required: true
+    // },
+    // isOtpVerified: {
+    //     type: Boolean,
+    //     default: false
+    // },
+    // resetOtp: {
+    //     type: String
+    // },
+    // otpExpires: {
+    //     type:Date
+    // } 

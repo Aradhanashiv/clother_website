@@ -4,8 +4,8 @@ import { createToken } from '../config/token.js'
 
 export const handleSignUp = async (req,res) => {
     try {
-      const {name, email, password, mobileNumber, role} = req.body
-      if(!name || !email || !password || !mobileNumber || !role)  {
+      const {name, email, password, mobileNumber} = req.body
+      if(!name || !email || !password || !mobileNumber)  {
         return res.status(400).json({success:false, "message": "All Fields are Required"})
       }
       const isExistingUser = await userModel.findOne({email : email.toLowerCase()})
@@ -24,8 +24,7 @@ export const handleSignUp = async (req,res) => {
         name,
         email,
         password: hashPassword,
-        mobileNumber,
-        role
+        mobileNumber
       })
       const token = createToken(user._id)   
       res.cookie("token" , token, {

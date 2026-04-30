@@ -10,9 +10,11 @@ import { FaBackward } from "react-icons/fa";
 const AddToCart = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate();
+  const {userData} = useSelector(state => state.user)
   const { products, totalQuantiy } = useSelector((state) => state.cart);
   const [selectedId, setSelectedId] = useState(null)
   const [showConfirm, setShowConfirm] = useState(false)
+
    
 const totalPrice = products.reduce((total, item) => {
     return total + item.price * item.quantity
@@ -107,6 +109,8 @@ const totalPrice = products.reduce((total, item) => {
           <p>Total Amount</p>
           <p>{totalPrice}</p>
           </div>
+          <div><button className="bg-pink-500 border-none px-4 py-2 " 
+          onClick={!userData ? navigate=('/'): ()=>{}}>Place Order</button></div>
        </div>
        </div>
     </div>
