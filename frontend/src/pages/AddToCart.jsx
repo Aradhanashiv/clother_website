@@ -111,7 +111,7 @@ const totalPrice = products.reduce((total, item) => {
           <p>{totalPrice}</p>
           </div>
           <div><button className="bg-pink-500 border-none px-4 py-2 " 
-          onClick={!userData ? navigate('/'): ()=>{}}>Place Order</button>
+          onClick={!userData ? ()=> navigate('/'): ()=>{}}>Place Order</button>
           </div>
        </div>
        </div>
