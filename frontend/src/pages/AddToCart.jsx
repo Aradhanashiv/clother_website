@@ -57,7 +57,7 @@ const totalPrice = products.reduce((total, item) => {
               -
               </button>
               </div>
-              <p className="mt-1 font-bold text-gray-700">₹{item.price}</p>
+              <p className="mt-1 font-bold text-gray-700">₹{(item.quantity) * (item.price)}</p>
             </div>
             <div className="">
             <RxCross2 size={25} onClick={()=>{
