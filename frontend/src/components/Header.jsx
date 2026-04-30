@@ -19,6 +19,7 @@ const Header = () => {
   const dispatch = useDispatch();
   const [menuOpen, setMenuOpen] = useState(false);
   const { totalQuantiy } = useSelector((state) => state.cart);
+    const {userData} =  useSelector(state => state.user)
 
   let nav_items = [
     { name: "Home", path: "/" },
@@ -113,10 +114,15 @@ const Header = () => {
               {totalQuantiy}
             </span>
           </div>
+          {!userData ? <button
+            className="hidden md:block border px-2 py-1 rounded-full bg-pink-500 text-white font-medium md:text-sm text-xs"
+            onClick={() => navigate('/signin')}
+          >SignUp / SignIn </button> : 
             <button
             className="hidden md:block border px-2 py-1 rounded-full bg-pink-500 text-white font-medium md:text-sm text-xs"
             onClick={() => setUserSignOut()}
           >Sign Out </button>
+            }
         </div>
 
         <div className="md:hidden text-black cursor-pointer"

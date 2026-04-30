@@ -15,7 +15,6 @@ import SearchResults from './pages/SearchResults.jsx'
 import AddToCart from './pages/AddToCart.jsx'
 import AboutUs from './pages/AboutUs.jsx'
 import TermsConditions from './pages/TermsConditions.jsx'
-// export const serverUrl = 'http://localhost:4000'
 
 const App = () => {
   useGetCurrentUser()
@@ -25,8 +24,8 @@ const App = () => {
     <>
     <ToastContainer/>
     <Routes>
-      <Route path="/signup"  element={!userData ? <Signup/> : <Navigate to={"/"}/> }/>
-      <Route path="/signin" element={!userData ? <Signin/> : <Navigate to={"/"}/>}/>
+      <Route path="/signup"  element={ <Signup/> }/>
+      <Route path="/signin" element={ <Signin/>}/>
       <Route path="/"  element={<Home/>}/>
       <Route path="/add-product" element={userData ? <AddProduct/> : <Navigate to={"/signin"}/>}/>
       <Route path="/update-product/:id" element={userData ? <UpdateProduct/> : <Navigate to={"/signin"}/>}/>
