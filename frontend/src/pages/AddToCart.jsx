@@ -83,7 +83,8 @@ const totalPrice = products.reduce((total, item) => {
           onClick={()=>setShowConfirm(false)}
           >Cancel</button>
           <button className="w-full m-1 text-sm bg-white border font-medium text-pink-500 px-3 py-2 rounded hover:bg-pink-100"
-          onClick={()=>dispatch(removeFromCart(selectedId._id), setShowConfirm(false))}
+          onClick={()=>{dispatch(removeFromCart(selectedId._id));
+             setShowConfirm(false);}}
           >Remove</button>
         </div>
         </div>
@@ -110,7 +111,7 @@ const totalPrice = products.reduce((total, item) => {
           <p>{totalPrice}</p>
           </div>
           <div><button className="bg-pink-500 border-none px-4 py-2 " 
-          onClick={!userData ? navigate=('/'): ()=>{}}>Place Order</button>
+          onClick={!userData ? navigate('/'): ()=>{}}>Place Order</button>
           </div>
        </div>
        </div>
