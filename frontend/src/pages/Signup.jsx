@@ -20,12 +20,10 @@ const Signup = () => {
   const dispatch = useDispatch()
 
   const handleSignup = async () => {
-
-    
      try {
        setLoading(true)
        const result = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/user/signup` , 
-        {name, email, password, mobileNumber, role} , 
+        {name, email, password, mobileNumber} , 
         {withCredentials: true})
         dispatch(setUserData(result.data.user))
         setName(""), setEmail(""), setPassword(""), setMobileNumber("")
