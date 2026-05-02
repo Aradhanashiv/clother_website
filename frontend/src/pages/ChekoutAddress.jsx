@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 
 const ChekoutAddress = () => {
+
+
+    const [showForm, setShowForm] = useState(false)
     
     const addresses = useSelector((state) => state.user?.addresses || [])
     const {products} = useSelector((state)=> state.cart || {})
@@ -18,13 +21,13 @@ const ChekoutAddress = () => {
           </h1>
         
           <div className="md:w-[80%] w-full m-auto flex justify-start items-center"> 
-          <button className="py-3 text-xl font-bold text-gray-800">Add New Address</button>
+          <button className="py-3 text-xl font-bold text-gray-800" onClick={()=>setShowForm(true)}>Add New Address</button>
           </div>
 
           <div className="flex flex-col items-center m-auto md:w-[80%] w-full flex"> 
           <div className="w-full rounded-lg px-2 py-3 m-auto">
               {addresses.length === 0 ? 
-               <p className="py-3 text-xl font-bold text-gray-800">No Address Saved</p> 
+               <p className="py-3 text-lg text-gray-800">No Address Saved</p> 
               :<div className="flex border border-gray-300 rounded-lg mt-1  m-auto px-3 py-4 bg-white/70">
                 <div className="w-full px-4">
                   <p className="font-bold">addressfullName</p>
@@ -62,8 +65,8 @@ const ChekoutAddress = () => {
           </div>
           </div>
          
-       
-           <form className="bg-white p-5 rounded-lg shadow-md w-full md:w-[500px] mx-auto">
+       {showForm && <div className='fixed inset-0 bg-green-500/50 flex items-center justify-center z-50'>
+         <form className="bg-white p-5 rounded-lg shadow-md w-full md:w-[500px] mx-auto">
 
       <h2 className="text-xl font-bold mb-4">Add Delivery Address</h2>
       <input
@@ -138,6 +141,8 @@ const ChekoutAddress = () => {
 
       <button type="submit" className="w-full bg-pink-600 text-white py-2 rounded font-semibold">Save Address</button>
     </form>
+       </div>}
+    
 
             </div>
            </div>
