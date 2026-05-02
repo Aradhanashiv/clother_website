@@ -44,7 +44,7 @@ const Header = () => {
     try {
       setLoading(true);
       const result = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/user/signout`,
+        `${import.meta.env.VITE_BACKEND_URL}/user/signout`, {},
         { withCredentials: true },
       );
       console.log(result);
