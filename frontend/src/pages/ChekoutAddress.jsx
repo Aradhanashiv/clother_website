@@ -9,13 +9,12 @@ const ChekoutAddress = () => {
 
     const [showForm, setShowForm] = useState(false)
     const addresses = useSelector((state) => state.user?.addresses || [])
-    const {products} = useSelector((state)=> state.cart || {})
+    const products = useSelector((state)=> state.cart?.products || {})
 
     const totalPrice = products.reduce((acc, item) => {
       return acc + item.price * item.quantity
-    }, 0)
-
-    const AddressForm = ({onSubmit}) => {
+     }, 0)
+   
       const [formData, setFormData] = useState({
         fullName: "",
         phone: "",
@@ -24,30 +23,29 @@ const ChekoutAddress = () => {
         state: "",
         postalCode: "",
         isDefault: false,
-      })
-    }
+    })
 
     const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData((prev) => ({
       ...prev,
       [name]: type === "checkbox" ? checked : value,
-    }));
-   };
+     }));
+    };
 
     const handleSubmit = async (e) => {
       e.preventDefault()
      try {
       const result = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/user/add-user-address` ,
          AddressForm, {withCredentials: true})
-         setFormData({
-  fullName: "",
-  phone: "",
-  addressLine1: "",
-  city: "",
-  state: "",
-  postalCode: "",
-  isDefault: false
+         formData({
+             fullName: "",
+             phone: "",
+             addressLine1: "",
+             city: "",
+             state: "",
+             postalCode: "",
+             isDefault: false
 });
        toast.success("Users Address Saved Successfully")
        setShowForm(false)
