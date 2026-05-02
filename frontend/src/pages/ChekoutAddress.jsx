@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
+import { RxCross2 } from "react-icons/rx";
+
 
 const ChekoutAddress = () => {
 
@@ -66,9 +68,12 @@ const ChekoutAddress = () => {
           </div>
          
        {showForm && <div className='fixed inset-0 bg-green-500/50 flex items-center justify-center z-50'>
+      
          <form className="bg-white p-5 rounded-lg shadow-md w-full md:w-[500px] mx-auto">
-
+      <div className='flex items-center justify-between'>
       <h2 className="text-xl font-bold mb-4">Add Delivery Address</h2>
+      <RxCross2/>
+      </div>
       <input
         type="text"
         name="fullName"
