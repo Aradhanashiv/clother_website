@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 const ChekoutAddress = () => {
     
     const {addresses} = useSelector(state => state.user)
-    const {products} = useSelector(State=> state.cart)
+    const {products} = useSelector(state=> state.cart)
 
   return (
       <section id="checkout_Address_details">
