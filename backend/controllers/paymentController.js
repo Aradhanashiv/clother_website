@@ -28,9 +28,9 @@ export const createOrder = async(req,res) => {
    try {
     const {amount} = req.body
     const options = {
-        amount = amount* 100,
+        amount: amount* 100,
         currency: "INR",
-        receipt = `receipt_${Date.now()}`
+        receipt: `receipt_${Date.now()}`
     }
 
     const order = await razorPayInstance.orders.create(options);
