@@ -23,7 +23,9 @@ const ChekoutAddress = () => {
 
           <div className="flex flex-col items-center m-auto md:w-[80%] w-full flex"> 
           <div className="w-full rounded-lg px-2 py-3 m-auto">
-          <div className="flex border border-gray-300 rounded-lg mt-1  m-auto px-3 py-4 bg-white/70">
+              {addresses.length === 0 ? 
+               <p className="py-3 text-xl font-bold text-gray-800">No Address Saved</p> 
+              :<div className="flex border border-gray-300 rounded-lg mt-1  m-auto px-3 py-4 bg-white/70">
                 <div className="w-full px-4">
                   <p className="font-bold">addressfullName</p>
                   <p className="text-gray-700">
@@ -33,7 +35,8 @@ const ChekoutAddress = () => {
                     addresscity,addressstate,addresspostalCode
                   </p>
                   </div>
-          </div>
+            </div>}
+       
 
           <div className="w-full rounded border  border-gray-300 bg-white/90 px-5 py-4 mt-[20px]">
           <p className="font-bold py-3 text-gray-800">Price Details ({products.length})</p>
@@ -58,6 +61,83 @@ const ChekoutAddress = () => {
           >Continue</button>
           </div>
           </div>
+         
+       
+           <form className="bg-white p-5 rounded-lg shadow-md w-full md:w-[500px] mx-auto">
+
+      <h2 className="text-xl font-bold mb-4">Add Delivery Address</h2>
+      <input
+        type="text"
+        name="fullName"
+        placeholder="Full Name"
+        // value={formData.fullName}
+        // onChange={handleChange}
+        className="w-full border p-2 mb-3 rounded"
+        required
+      />
+
+      <input
+        type="text"
+        name="phone"
+        placeholder="Phone Number"
+        // value={formData.phone}
+        // onChange={handleChange}
+        className="w-full border p-2 mb-3 rounded"
+        required
+      />
+
+      <input
+        type="text"
+        name="addressLine1"
+        placeholder="Address Line 1"
+        // value={formData.addressLine1}
+        // onChange={handleChange}
+        className="w-full border p-2 mb-3 rounded"
+        required
+      />
+
+      <input
+        type="text"
+        name="city"
+        placeholder="City"
+        // value={formData.city}
+        // onChange={handleChange}
+        className="w-full border p-2 mb-3 rounded"
+        required
+      />
+
+      <input
+        type="text"
+        name="state"
+        placeholder="State"
+        // value={formData.state}
+        // onChange={handleChange}
+        className="w-full border p-2 mb-3 rounded"
+        required
+      />
+
+      <input
+        type="text"
+        name="postalCode"
+        placeholder="Postal Code"
+        // value={formData.postalCode}
+        // onChange={handleChange}
+        className="w-full border p-2 mb-3 rounded"
+        required
+      />
+
+      <label className="flex items-center gap-2 mb-4">
+        <input
+          type="checkbox"
+          name="isDefault"
+          // checked={formData.isDefault}
+          // onChange={handleChange}
+        />
+        Set as Default Address
+      </label>
+
+      <button type="submit" className="w-full bg-pink-600 text-white py-2 rounded font-semibold">Save Address</button>
+    </form>
 
             </div>
            </div>
