@@ -15,6 +15,7 @@ import SearchResults from './pages/SearchResults.jsx'
 import AddToCart from './pages/AddToCart.jsx'
 import AboutUs from './pages/AboutUs.jsx'
 import TermsConditions from './pages/TermsConditions.jsx'
+import ChekoutAddress from './pages/ChekoutAddress.jsx'
 
 const App = () => {
   useGetCurrentUser()
@@ -35,7 +36,8 @@ const App = () => {
       <Route path="/search" element={<SearchResults/>} />
       <Route path="/add-to-cart" element={<AddToCart/>} />
       <Route path="/about-us" element={<AboutUs/>} />
-       <Route path="/term-and-condition" element={<TermsConditions/>} />
+      <Route path="/term-and-condition" element={<TermsConditions/>} />
+      <Route path="/checkout-address" element={<ChekoutAddress/>} />
     </Routes>
     
     </>
