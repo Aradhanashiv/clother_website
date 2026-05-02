@@ -111,7 +111,7 @@ export const handleAddUserAddress = async (req,res) => {
    }
     user.addresses.push(address)
     await user.save()
-    return res.status(200).json({success: true, message: "User Address Saved successfully"})
+    return res.status(200).json({success: true, addresses:user.addresses })
   } catch (error) {
       res.status(500).json({
       success: false,

@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { RxCross2 } from "react-icons/rx";
 import { toast } from "react-toastify"
 import axios from 'axios';
+import { setUserData } from '../redux/userSlice';
 
 
 const ChekoutAddress = () => {
@@ -11,6 +12,7 @@ const ChekoutAddress = () => {
     const addresses = useSelector((state) => state.user?.addresses || [])
     const products = useSelector((state)=> state.cart?.products || {})
     const [err, setErr] = useState("")
+    const dispatch = useDispatch()
 
     const totalPrice = products.reduce((acc, item) => {
       return acc + item.price * item.quantity
@@ -47,7 +49,9 @@ const ChekoutAddress = () => {
              state: "",
              postalCode: "",
              isDefault: false
-});
+           });
+           console.log(result);
+        //  dispatch(setUserData(r))  
        toast.success("Users Address Saved Successfully")
        setShowForm(false)
      } catch (error) {
