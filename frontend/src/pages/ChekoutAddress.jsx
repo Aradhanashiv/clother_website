@@ -11,7 +11,7 @@ const ChekoutAddress = () => {
     const [showForm, setShowForm] = useState(false)
     const addresses = useSelector((state) => state?.user?.addresses || [])
     const products = useSelector((state)=> state.cart?.products || [])
-    const userData = useSelector((state) => state.user);
+    const userData = useSelector((state) => state.user.userData);
     const [err, setErr] = useState("")
     const dispatch = useDispatch()
 
