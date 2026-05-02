@@ -17,7 +17,18 @@ const userSchema = new Schema({
     mobileNumber: {
        type: Number,
        required: true
+    },
+    addresses: [
+    {
+      fullName: String,
+      phone: String,
+      addressLine1: String,
+      city: String,
+      state: String,
+      postalCode: String,
+      isDefault: Boolean,
     }
+  ]
 }, {timestamps: true}     
 )
 

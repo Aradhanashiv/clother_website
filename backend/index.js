@@ -7,6 +7,7 @@ import userRoute from './routes/userRoute.js'
 import productRoute from './routes/productRoute.js'
 import categoryRoute from './routes/categoryRoute.js'
 import searchRoute from './routes/searchRoute.js'
+import paymentRoute from './routes/paymentRoute.js'
 
 
 const app = express()
@@ -24,6 +25,7 @@ app.use('/user' , userRoute)
 app.use('/product' , productRoute)
 app.use('/category' , categoryRoute)
 app.use('/search', searchRoute)
+app.use('/payment', paymentRoute)
 
 connectMongoDB()
 app.listen(port, ()=>{

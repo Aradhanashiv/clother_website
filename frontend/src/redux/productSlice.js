@@ -13,7 +13,7 @@ export const fetchProductsByCategory = createAsyncThunk(
       return {
          products: res.data.products,
          category
-       }
+       } 
       }
     catch(error){
       return thunkAPI.rejectWithValue(
