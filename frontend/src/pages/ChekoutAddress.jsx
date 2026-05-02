@@ -3,8 +3,12 @@ import { useSelector } from 'react-redux'
 
 const ChekoutAddress = () => {
     
-    const {addresses} = useSelector(state => state.user)
-    const {products} = useSelector(state=> state.cart)
+    const {addresses} = useSelector((state) => state.user || {})
+    const {products} = useSelector((state)=> state.cart || {})
+
+    const totalPrice = products.reduce((acc, item) => {
+      return acc + item.price * item.quantity
+    }, 0)
 
   return (
       <section id="checkout_Address_details">
@@ -47,7 +51,7 @@ const ChekoutAddress = () => {
           </div>
           <div className="flex items-center justify-between mt-3 border-t border-gray-500">
           <p>Total Amount</p>
-          <p>{products.totalPrice}</p>
+          <p>{totalPrice}</p>
           </div>
           <div className="text-right mt-5">
           <button className="bg-pink-700 border-none px-10 py-2 text-white rounded-lg font-semibold " 
