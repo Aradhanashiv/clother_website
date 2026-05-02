@@ -22,8 +22,9 @@ const ChekoutAddress = () => {
            select delivery Address
           </h1>
         
-          <div className="md:w-[80%] w-full m-auto flex justify-start items-center text-right"> 
-          <button className="py-3 text-xl font-bold text-gray-800 border rounded-lg" onClick={()=>setShowForm(true)}>Add New Address</button>
+          <div className="md:w-[80%] w-full m-auto flex justify-start items-center"> 
+          <button className="py-2 px-4 text-lg font-semibold text-gray-800 border rounded-lg" 
+          onClick={()=>setShowForm(true)}>Add New Address</button>
           </div>
 
           <div className="flex flex-col items-center m-auto md:w-[80%] w-full flex"> 
