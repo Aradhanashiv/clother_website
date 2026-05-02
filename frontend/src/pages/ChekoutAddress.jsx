@@ -51,7 +51,7 @@ const ChekoutAddress = () => {
           </div>
           <div className="text-right mt-5">
           <button className="bg-pink-700 border-none px-10 py-2 text-white rounded-lg font-semibold " 
-          onClick={}>Continue</button>
+          >Continue</button>
           </div>
           </div>
 
