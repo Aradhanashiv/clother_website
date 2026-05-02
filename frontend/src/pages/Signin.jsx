@@ -25,7 +25,6 @@ const Signin = () => {
       const result = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/user/signin` , {email, password} , {withCredentials: true})
       dispatch(setUserData(result.data.user))
       setEmail(""), setPassword("")
-      
       toast.success('User SignIn Successfully', {autoClose: 2000})
       console.log(result.data.user);
       setLoading(false)
@@ -33,10 +32,10 @@ const Signin = () => {
       console.log(error);
       setErr(error.response.data.message)
       setLoading(false)
-
     }
   }
-console.log("userData from redux:", userData);
+
+  console.log("userData from redux:", userData);
   useEffect(()=>{
     if(userData){
    navigate('/')
