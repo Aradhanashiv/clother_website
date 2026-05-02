@@ -11,6 +11,7 @@ const ChekoutAddress = () => {
     const [showForm, setShowForm] = useState(false)
     const addresses = useSelector((state) => state.user?.addresses || [])
     const products = useSelector((state)=> state.cart?.products || {})
+    const userData = useSelector((state) => state.user);
     const [err, setErr] = useState("")
     const dispatch = useDispatch()
 
@@ -51,7 +52,7 @@ const ChekoutAddress = () => {
             //  isDefault: false
            });
            console.log(result.data.addresses);
-         dispatch(setUserData({
+           dispatch(setUserData({
           ...state.userData,
          addresses: result.data.addresses}))  
        toast.success("Users Address Saved Successfully")
