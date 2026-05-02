@@ -26,8 +26,8 @@ const AddProduct = () => {
   const fileInputRef = useRef(null)
 
 
-const SIZE_OPTIONS = ["S", "M", "L", "XL", "XXL"];
-
+   const SIZE_OPTIONS = ["S", "M", "L", "XL", "XXL"];
+   
    const handleImage = async (e) => {
     let files = Array.from(e.target.files)
     console.log(files);
@@ -37,7 +37,6 @@ const SIZE_OPTIONS = ["S", "M", "L", "XL", "XXL"];
   }
 
    const handleRemoveImage = async (index) => {
-    
     setBackend((prev) => prev.filter((_,i) => i !== index))
     setFrontend((prev) => {
     URL.revokeObjectURL(prev[index])

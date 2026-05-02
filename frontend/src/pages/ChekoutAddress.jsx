@@ -1,19 +1,62 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { RxCross2 } from "react-icons/rx";
+import { toast } from "react-toastify"
+
 
 
 const ChekoutAddress = () => {
 
-
     const [showForm, setShowForm] = useState(false)
-    
     const addresses = useSelector((state) => state.user?.addresses || [])
     const {products} = useSelector((state)=> state.cart || {})
 
     const totalPrice = products.reduce((acc, item) => {
       return acc + item.price * item.quantity
     }, 0)
+
+    const AddressForm = ({onSubmit}) => {
+      const [formData, setFormData] = useState({
+        fullName: "",
+        phone: "",
+        addressLine1: "",
+        city: "",
+        state: "",
+        postalCode: "",
+        isDefault: false,
+      })
+    }
+
+    const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+   };
+
+    const handleSubmit = async (e) => {
+      e.preventDefault()
+     try {
+      const result = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/user/add-user-address` ,
+         formData, {withCredentials: true})
+         setFormData({
+  fullName: "",
+  phone: "",
+  addressLine1: "",
+  city: "",
+  state: "",
+  postalCode: "",
+  isDefault: false
+});
+       toast.success("Users Address Saved Successfully")
+       setShowForm(false)
+     } catch (error) {
+      console.log(error);
+      setErr(error.response.data.message)
+     }      
+      
+    }
 
   return (
       <section id="checkout_Address_details">
@@ -28,6 +71,7 @@ const ChekoutAddress = () => {
           </div>
 
           <div className="flex flex-col items-center m-auto md:w-[80%] w-full flex"> 
+         
           <div className="w-full rounded-lg px-2 py-3 m-auto">
               {addresses.length === 0 ? 
                <p className="py-3 text-lg text-gray-800">No Address Saved</p> 
@@ -42,7 +86,6 @@ const ChekoutAddress = () => {
                   </p>
                   </div>
             </div>}
-       
 
           <div className="w-full rounded border  border-gray-300 bg-white/90 px-5 py-4 mt-[20px]">
           <p className="font-bold py-3 text-gray-800">Price Details ({products.length})</p>
@@ -70,7 +113,7 @@ const ChekoutAddress = () => {
          
        {showForm && <div className='fixed inset-0 bg-black/50 flex items-center justify-center z-50'>
       
-         <form className="bg-white p-5 shadow-md w-full md:w-[500px] mx-auto">
+      <form className="bg-white p-5 shadow-md w-full md:w-[500px] mx-auto" onSubmit={handleSubmit}>
       <div className='flex items-center justify-between'>
       <h2 className="text-xl font-bold mb-4">Add Delivery Address</h2>
       <RxCross2 size={20} onClick={()=>setShowForm(false)}/>
@@ -79,8 +122,8 @@ const ChekoutAddress = () => {
         type="text"
         name="fullName"
         placeholder="Full Name"
-        // value={formData.fullName}
-        // onChange={handleChange}
+        value={formData.fullName}
+        onChange={handleChange}
         className="w-full border border-pink-600 p-2 mb-3 rounded-xl"
         required
       />
@@ -89,8 +132,8 @@ const ChekoutAddress = () => {
         type="text"
         name="phone"
         placeholder="Phone Number"
-        // value={formData.phone}
-        // onChange={handleChange}
+        value={formData.phone}
+        onChange={handleChange}
         className="w-full border border-pink-600 p-2 mb-3 rounded-xl"
         required
       />
@@ -99,8 +142,8 @@ const ChekoutAddress = () => {
         type="text"
         name="addressLine1"
         placeholder="Address Line 1"
-        // value={formData.addressLine1}
-        // onChange={handleChange}
+        value={formData.addressLine1}
+        onChange={handleChange}
         className="w-full border border-pink-600 p-2 mb-3 rounded-xl"
         required
       />
@@ -109,8 +152,8 @@ const ChekoutAddress = () => {
         type="text"
         name="city"
         placeholder="City"
-        // value={formData.city}
-        // onChange={handleChange}
+        value={formData.city}
+        onChange={handleChange}
         className="w-full border border-pink-600 p-2 mb-3 rounded-xl"
         required
       />
@@ -119,8 +162,8 @@ const ChekoutAddress = () => {
         type="text"
         name="state"
         placeholder="State"
-        // value={formData.state}
-        // onChange={handleChange}
+        value={formData.state}
+        onChange={handleChange}
         className="w-full border border-pink-600 p-2 mb-3 rounded-xl"
         required
       />
@@ -129,8 +172,8 @@ const ChekoutAddress = () => {
         type="text"
         name="postalCode"
         placeholder="Postal Code"
-        // value={formData.postalCode}
-        // onChange={handleChange}
+        value={formData.postalCode}
+        onChange={handleChange}
         className="w-full border border-pink-600 p-2 mb-3 rounded-xl"
         required
       />
@@ -139,15 +182,17 @@ const ChekoutAddress = () => {
         <input
           type="checkbox"
           name="isDefault"
-          // checked={formData.isDefault}
-          // onChange={handleChange}
+          checked={formData.isDefault}
+          onChange={handleChange}
         />
         Set as Default Address
       </label>
 
-      <button type="submit" className="w-full bg-pink-700 text-white py-2 rounded font-semibold hover:bg-pink-500">Save Address</button>
-    </form>
-       </div>}
+      <button type="submit"
+       className="w-full bg-pink-700 text-white py-2 rounded font-semibold hover:bg-pink-500">Save Address</button>
+      </form>
+       </div>
+      }
     
 
             </div>

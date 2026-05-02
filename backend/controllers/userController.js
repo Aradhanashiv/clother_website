@@ -100,3 +100,22 @@ export const handleUserData = async (req,res) => {
     return res.status(500).json({success:false, msg: "Request fail for fetching UserData"})  
   }
 }
+
+export const handleAddUserAddress = async (req,res) => {
+  try {
+    const userId = req.user
+    const address = req.body
+    const user = await userModel.findById(userId)
+    if (!user) {
+    return res.status(404).json({ message: "User not found" });
+   }
+    user.addresses.push(address)
+    await user.save()
+    return res.status(200).json({success: true, message: "User Address Saved successfully"})
+  } catch (error) {
+      res.status(500).json({
+      success: false,
+      message: "Error adding address"
+    });
+  }
+}
