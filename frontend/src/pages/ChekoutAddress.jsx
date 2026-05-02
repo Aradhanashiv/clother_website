@@ -69,8 +69,8 @@ const ChekoutAddress = () => {
          
        {showForm && <div className='fixed inset-0 bg-black/50 flex items-center justify-center z-50'>
       
-         <form className="bg-white p-5 rounded-lg shadow-md w-full md:w-[500px] mx-auto">
-      <div className='flex items-center '>
+         <form className="bg-white p-5 shadow-md w-full md:w-[500px] mx-auto">
+      <div className='flex items-center justify-between'>
       <h2 className="text-xl font-bold mb-4">Add Delivery Address</h2>
       <RxCross2 size={20} onClick={()=>setShowForm(false)}/>
       </div>
