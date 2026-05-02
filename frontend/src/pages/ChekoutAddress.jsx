@@ -9,7 +9,7 @@ import { setUserData } from '../redux/userSlice';
 const ChekoutAddress = () => {
 
     const [showForm, setShowForm] = useState(false)
-    const addresses = useSelector((state) => state?.user?.addresses || [])
+    const addresses = useSelector((state) => state.user?.userData?.addresses || [])
     const products = useSelector((state)=> state.cart?.products || [])
     const userData = useSelector((state) => state.user.userData);
     const [err, setErr] = useState("")
@@ -25,8 +25,7 @@ const ChekoutAddress = () => {
         addressLine1: "",
         city: "",
         state: "",
-        postalCode: "",
-        // isDefault: false,
+        postalCode: ""
     })
 
     const handleChange = (e) => {
