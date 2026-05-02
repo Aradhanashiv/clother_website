@@ -19,7 +19,7 @@ const ChekoutAddress = () => {
 
           <div className="flex flex-col items-center m-auto md:w-[80%] w-full flex"> 
           <div className="w-full rounded-lg px-2 py-3 m-auto">
-            <div className="flex border border-gray-300 rounded-lg mt-1  m-auto px-3 py-4 bg-white/70">
+          <div className="flex border border-gray-300 rounded-lg mt-1  m-auto px-3 py-4 bg-white/70">
                 <div className="w-full px-4">
                   <p className="font-bold">addressfullName</p>
                   <p className="text-gray-700">
@@ -53,7 +53,8 @@ const ChekoutAddress = () => {
           <button className="bg-pink-700 border-none px-10 py-2 text-white rounded-lg font-semibold " 
           onClick={}>Continue</button>
           </div>
-       </div>
+          </div>
+          
             </div>
            </div>
         </div>
