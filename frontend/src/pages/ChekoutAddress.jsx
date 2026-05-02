@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 
 const ChekoutAddress = () => {
     
-    const {addresses} = useSelector((state) => state.user || {})
+    const addresses = useSelector((state) => state.user?.addresses || [])
     const {products} = useSelector((state)=> state.cart || {})
 
     const totalPrice = products.reduce((acc, item) => {

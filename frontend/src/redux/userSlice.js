@@ -5,7 +5,13 @@ const userSlice = createSlice({
     name: "user",
 
     initialState: {
-        userData: null,
+        userData: {
+            name: "",
+            email: "",
+            mobileNumber: "",
+            addresses: []
+        },
+
         loading: true
     },
 
