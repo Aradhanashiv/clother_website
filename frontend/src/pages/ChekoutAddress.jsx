@@ -25,7 +25,7 @@ const ChekoutAddress = () => {
         city: "",
         state: "",
         postalCode: "",
-        isDefault: false,
+        // isDefault: false,
     })
 
     const handleChange = (e) => {
@@ -48,10 +48,10 @@ const ChekoutAddress = () => {
              city: "",
              state: "",
              postalCode: "",
-             isDefault: false
+            //  isDefault: false
            });
            console.log(result.data.addresses);
-        //  dispatch(setUserData(r))  
+         dispatch(setUserData(result.data.addresses))  
        toast.success("Users Address Saved Successfully")
        setShowForm(false)
      } catch (error) {
@@ -77,18 +77,25 @@ const ChekoutAddress = () => {
          
           <div className="w-full rounded-lg px-2 py-3 m-auto">
               {addresses.length === 0 ? 
-               <p className="py-3 text-lg text-gray-800">No Address Saved</p> 
-              :<div className="flex border border-gray-300 rounded-lg mt-1  m-auto px-3 py-4 bg-white/70">
+              ( <p className="py-3 text-lg text-gray-800">No Address Saved</p> )
+              :
+               (addresses.map((address, i) => (
+              <div className="flex border border-gray-300 rounded-lg mt-1  m-auto px-3 py-4 bg-white/70">
                 <div className="w-full px-4">
-                  <p className="font-bold">addressfullName</p>
+                  <p className="font-bold">{address.fullName}</p>
                   <p className="text-gray-700">
-                    addressaddressLine1
+                    {address.addressLine1}
                   </p>
                    <p className="text-gray-700">
-                    addresscity,addressstate,addresspostalCode
+                    {address.city}, {address.state}, {address.postalCode}
                   </p>
                   </div>
-            </div>}
+                  </div>))
+               )
+              
+         }
+              
+            
 
           <div className="w-full rounded border  border-gray-300 bg-white/90 px-5 py-4 mt-[20px]">
           <p className="font-bold py-3 text-gray-800">Price Details ({products.length})</p>
@@ -181,7 +188,7 @@ const ChekoutAddress = () => {
         required
       />
 
-      <label className="flex items-center gap-2 mb-4">
+      {/* <label className="flex items-center gap-2 mb-4">
         <input
           type="checkbox"
           name="isDefault"
@@ -189,7 +196,7 @@ const ChekoutAddress = () => {
           onChange={handleChange}
         />
         Set as Default Address
-      </label>
+      </label> */}
 
       <button type="submit"
        className="w-full bg-pink-700 text-white py-2 rounded font-semibold hover:bg-pink-500">Save Address</button>
