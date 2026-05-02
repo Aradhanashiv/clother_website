@@ -38,8 +38,8 @@ const ChekoutAddress = () => {
       e.preventDefault()
      try {
       const result = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/user/add-user-address` ,
-         AddressForm, {withCredentials: true})
-         formData({
+         formData, {withCredentials: true})
+         setFormData({
              fullName: "",
              phone: "",
              addressLine1: "",
