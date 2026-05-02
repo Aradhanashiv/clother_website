@@ -14,7 +14,7 @@ const ChekoutAddress = () => {
           </h1>
         
           <div className="md:w-[80%] w-full m-auto flex justify-start items-center"> 
-          <button className="py-3 text-xl font-bold text-gray-800" onClick={()=>{}}>Add New Address</button>
+          <button className="py-3 text-xl font-bold text-gray-800">Add New Address</button>
           </div>
 
           <div className="flex flex-col items-center m-auto md:w-[80%] w-full flex"> 
@@ -54,7 +54,7 @@ const ChekoutAddress = () => {
           onClick={}>Continue</button>
           </div>
           </div>
-          
+
             </div>
            </div>
         </div>
