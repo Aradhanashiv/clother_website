@@ -50,7 +50,7 @@ const ChekoutAddress = () => {
              postalCode: "",
              isDefault: false
            });
-           console.log(result);
+           console.log(result.data.addresses);
         //  dispatch(setUserData(r))  
        toast.success("Users Address Saved Successfully")
        setShowForm(false)
