@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { RxCross2 } from "react-icons/rx";
 import { toast } from "react-toastify"
-
+import axios from 'axios';
 
 
 const ChekoutAddress = () => {
@@ -10,6 +10,7 @@ const ChekoutAddress = () => {
     const [showForm, setShowForm] = useState(false)
     const addresses = useSelector((state) => state.user?.addresses || [])
     const products = useSelector((state)=> state.cart?.products || {})
+    const [err, setErr] = useState("")
 
     const totalPrice = products.reduce((acc, item) => {
       return acc + item.price * item.quantity
@@ -51,7 +52,7 @@ const ChekoutAddress = () => {
        setShowForm(false)
      } catch (error) {
       console.log(error);
-      setErr(error.response.data.message)
+      setErr(error?.response?.data?.message)
      }      
       
     }
