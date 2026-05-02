@@ -67,12 +67,12 @@ const ChekoutAddress = () => {
           </div>
           </div>
          
-       {showForm && <div className='fixed inset-0 bg-green-500/50 flex items-center justify-center z-50'>
+       {showForm && <div className='fixed inset-0 bg-black/50 flex items-center justify-center z-50'>
       
          <form className="bg-white p-5 rounded-lg shadow-md w-full md:w-[500px] mx-auto">
-      <div className='flex items-center justify-between'>
+      <div className='flex items-center '>
       <h2 className="text-xl font-bold mb-4">Add Delivery Address</h2>
-      <RxCross2/>
+      <RxCross2 size={20} onClick={()=>setShowForm(false)}/>
       </div>
       <input
         type="text"
@@ -80,7 +80,7 @@ const ChekoutAddress = () => {
         placeholder="Full Name"
         // value={formData.fullName}
         // onChange={handleChange}
-        className="w-full border p-2 mb-3 rounded"
+        className="w-full border border-pink-600 p-2 mb-3 rounded-xl"
         required
       />
 
@@ -90,7 +90,7 @@ const ChekoutAddress = () => {
         placeholder="Phone Number"
         // value={formData.phone}
         // onChange={handleChange}
-        className="w-full border p-2 mb-3 rounded"
+        className="w-full border border-pink-600 p-2 mb-3 rounded-xl"
         required
       />
 
@@ -100,7 +100,7 @@ const ChekoutAddress = () => {
         placeholder="Address Line 1"
         // value={formData.addressLine1}
         // onChange={handleChange}
-        className="w-full border p-2 mb-3 rounded"
+        className="w-full border border-pink-600 p-2 mb-3 rounded-xl"
         required
       />
 
@@ -110,7 +110,7 @@ const ChekoutAddress = () => {
         placeholder="City"
         // value={formData.city}
         // onChange={handleChange}
-        className="w-full border p-2 mb-3 rounded"
+        className="w-full border border-pink-600 p-2 mb-3 rounded-xl"
         required
       />
 
@@ -120,7 +120,7 @@ const ChekoutAddress = () => {
         placeholder="State"
         // value={formData.state}
         // onChange={handleChange}
-        className="w-full border p-2 mb-3 rounded"
+        className="w-full border border-pink-600 p-2 mb-3 rounded-xl"
         required
       />
 
@@ -130,7 +130,7 @@ const ChekoutAddress = () => {
         placeholder="Postal Code"
         // value={formData.postalCode}
         // onChange={handleChange}
-        className="w-full border p-2 mb-3 rounded"
+        className="w-full border border-pink-600 p-2 mb-3 rounded-xl"
         required
       />
 
@@ -144,7 +144,7 @@ const ChekoutAddress = () => {
         Set as Default Address
       </label>
 
-      <button type="submit" className="w-full bg-pink-600 text-white py-2 rounded font-semibold">Save Address</button>
+      <button type="submit" className="w-full bg-pink-700 text-white py-2 rounded font-semibold hover:bg-pink-500">Save Address</button>
     </form>
        </div>}
     
