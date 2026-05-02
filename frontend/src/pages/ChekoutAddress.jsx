@@ -52,7 +52,7 @@ const ChekoutAddress = () => {
            });
            console.log(result.data.addresses);
          dispatch(setUserData({
-          ...state.user,
+          ...state.userData,
          addresses: result.data.addresses}))  
        toast.success("Users Address Saved Successfully")
        setShowForm(false)
