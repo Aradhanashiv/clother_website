@@ -8,6 +8,6 @@ route.post('/signin' , handleSignIn)
 route.post('/signout' , handleSignOut)
 
 route.get('/user-data' ,autheticateUser, handleUserData)
-route.post('/add-user-address' , autheticateUser, handleAddUserAddress)
+route.get('/add-user-address' , autheticateUser, handleAddUserAddress)
 
 export default route
