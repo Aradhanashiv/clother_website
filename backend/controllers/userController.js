@@ -105,6 +105,9 @@ export const handleAddUserAddress = async (req,res) => {
   try {
     const userId = req.user
     const address = req.body
+    if (!address || !address.addressLine1 || !address.city) {
+      return res.status(400).json({ message: "Invalid address data" });
+    }
     const user = await userModel.findById(userId)
     if (!user) {
     return res.status(404).json({ message: "User not found" });

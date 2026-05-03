@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { RxCross2 } from "react-icons/rx";
 import { toast } from "react-toastify"
 import axios from 'axios';
-import { setUserData } from '../redux/userSlice';
+import { setUserData, addAddress } from '../redux/userSlice';
 
 
 const ChekoutAddress = () => {
@@ -51,9 +51,10 @@ const ChekoutAddress = () => {
             //  isDefault: false
            });
            console.log(result.data.addresses);
-           dispatch(setUserData({
-          ...userData,
-         addresses: result.data.addresses}))  
+        //    dispatch(setUserData({
+        //   ...userData,
+        //  addresses: result.data.addresses}))
+        dispatch(addAddress(result.data.addresses))  
        toast.success("Users Address Saved Successfully")
        setShowForm(false)
      } catch (error) {
@@ -82,7 +83,7 @@ const ChekoutAddress = () => {
               ( <p className="py-3 text-lg text-gray-800">No Address Saved</p> )
               :
                (addresses.map((address, i) => (
-              <div className="flex border border-gray-300 rounded-lg mt-1  m-auto px-3 py-4 bg-white/70">
+              <div key={i} className="flex border border-gray-300 rounded-lg mt-1  m-auto px-3 py-4 bg-white/70">
                 <div className="w-full px-4">
                   <p className="font-bold">{address.fullName}</p>
                   <p className="text-gray-700">
