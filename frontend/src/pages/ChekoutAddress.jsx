@@ -82,7 +82,7 @@ const ChekoutAddress = () => {
           <div className="flex flex-col items-center m-auto md:w-[80%] w-full flex"> 
          
           <div className="w-full rounded-lg px-2 py-3 m-auto">
-              {addresses.length === 0 ? 
+              {!addresses ? 
               ( <p className="py-3 text-lg text-gray-800">No Address Saved</p> )
               :
                (addresses.map((address, i) => (
