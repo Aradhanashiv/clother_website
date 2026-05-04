@@ -60,10 +60,7 @@ const ChekoutAddress = () => {
      }      
       
     }
-   console.log(userData.userData.addresses); 
-   console.log(userData.addresses);
-   
-    
+      
   return (
       <section id="checkout_Address_details">
           <div className="w-full min-h-screen bg-pink-50 p-5">
