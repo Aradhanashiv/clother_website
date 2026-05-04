@@ -10,8 +10,8 @@ const ChekoutAddress = () => {
 
     const [showForm, setShowForm] = useState(false)
     const products = useSelector((state)=> state.cart?.products || [])
-     const addresses = useSelector((state) => state.user.userData?.addresses || []);   
-      const [err, setErr] = useState("")
+      const {userData} = useSelector((state) => state.user);
+    const [err, setErr] = useState("")
     const dispatch = useDispatch()
 
     const totalPrice = products.reduce((acc, item) => {
@@ -58,8 +58,8 @@ const ChekoutAddress = () => {
      }      
       
     }
-
-   console.log(addresses);
+   console.log(userData.userData.addresses); 
+   console.log(userData.addresses);
    
     
   return (
@@ -77,10 +77,10 @@ const ChekoutAddress = () => {
           <div className="flex flex-col items-center m-auto md:w-[80%] w-full flex"> 
          
           <div className="w-full rounded-lg px-2 py-3 m-auto">
-              {addresses?.length === 0? 
+              {userData.userData?.addresses?.length === 0? 
               ( <p className="py-3 text-lg text-gray-800">No Address Saved</p> )
               :
-               (addresses.map((address, i) => (
+               (userData.userData.addresses.map((address, i) => (
               <div key={i} className="flex border border-gray-300 rounded-lg mt-1  m-auto px-3 py-4 bg-white/70">
                 <div className="w-full px-4">
                   <p className="font-bold">{address.fullName}</p>
