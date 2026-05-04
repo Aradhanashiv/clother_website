@@ -9,9 +9,9 @@ import { setUserData, setaddAddress } from '../redux/userSlice';
 const ChekoutAddress = () => {
 
     const [showForm, setShowForm] = useState(false)
-    const addresses = useSelector((state) => state.user.userData?.addresses)
     const products = useSelector((state)=> state.cart?.products || [])
     const userData = useSelector((state) => state.user.userData);
+     const addresses = useSelector((state) => userData.addresses)
     const [err, setErr] = useState("")
     const dispatch = useDispatch()
 
