@@ -7,10 +7,12 @@ import { setUserData, setaddAddress } from '../redux/userSlice';
 
 
 const ChekoutAddress = () => {
-
+  
+ 
     const [showForm, setShowForm] = useState(false)
     const products = useSelector((state)=> state.cart?.products || [])
-      const {userData} = useSelector((state) => state.user);
+      // const {userData} = useSelector((state) => state.user);
+       const { userData, loading } = useSelector((state) => state.user);
     const [err, setErr] = useState("")
     const dispatch = useDispatch()
 
@@ -75,7 +77,6 @@ const ChekoutAddress = () => {
           </div>
 
           <div className="flex flex-col items-center m-auto md:w-[80%] w-full flex"> 
-         
           <div className="w-full rounded-lg px-2 py-3 m-auto">
               {userData.addresses?.length === 0? 
               ( <p className="py-3 text-lg text-gray-800">No Address Saved</p> )
