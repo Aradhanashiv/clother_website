@@ -21,6 +21,7 @@ const App = () => {
   useGetCurrentUser()
   const {userData, loading} =  useSelector(state => state.user)
   if(loading) return <div>Loading...</div>
+  
   return (
     <>
     <ToastContainer/>

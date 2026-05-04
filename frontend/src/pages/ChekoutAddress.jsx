@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { RxCross2 } from "react-icons/rx";
 import { toast } from "react-toastify"
 import axios from 'axios';
-import { setUserData, addAddress } from '../redux/userSlice';
+import { setUserData, setaddAddress } from '../redux/userSlice';
 
 
 const ChekoutAddress = () => {
@@ -54,7 +54,7 @@ const ChekoutAddress = () => {
         //    dispatch(setUserData({
         //   ...userData,
         //  addresses: result.data.addresses}))
-        dispatch(addAddress(result.data.addresses))  
+        dispatch(setaddAddress(result.data.addresses))  
        toast.success("Users Address Saved Successfully")
        setShowForm(false)
      } catch (error) {
@@ -63,7 +63,8 @@ const ChekoutAddress = () => {
      }      
       
     }
-
+   
+    
   return (
       <section id="checkout_Address_details">
           <div className="w-full min-h-screen bg-pink-50 p-5">

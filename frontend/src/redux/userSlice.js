@@ -24,11 +24,11 @@ const userSlice = createSlice({
          state.userData = null;
          state.loading = false;
        },
-       addAddress: (state, action) => {
-       state.userData.addresses = action.payload;
+       setaddAddress: (state, action) => {
+       state.userData.addresses.push = action.payload;
 }
     }
 })
 
-export const {setUserData, clearUserData,addAddress} = userSlice.actions
+export const {setUserData, clearUserData,setaddAddress} = userSlice.actions
 export default userSlice.reducer
