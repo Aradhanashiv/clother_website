@@ -13,7 +13,7 @@ const ChekoutAddress = () => {
     const [err, setErr] = useState("")
     const dispatch = useDispatch()
 
-    const deleteAddress = (address) => {
+    const deleteAddress = async (address) => {
      try {
       const result = await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/user/delete-address/${address}` 
       , {withCredentials:true})
