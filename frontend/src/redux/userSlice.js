@@ -11,7 +11,7 @@ const userSlice = createSlice({
             mobileNumber: "",
             addresses: []
         },
-        
+
         loading: true
     },
 
@@ -26,7 +26,7 @@ const userSlice = createSlice({
        },
        setaddAddress: (state, action) => {
         if(state.userData) {
-       state.userData.addresses = action.payload;
+       state.userData.userData.addresses = action.payload;
 }}
     }
 })
