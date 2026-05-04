@@ -12,7 +12,7 @@ const ChekoutAddress = () => {
     const products = useSelector((state)=> state.cart?.products || [])
     const {userData} = useSelector((state) => state.user);
     //  const addresses = userData.addresses
-     const addresses = userData?.addresses || [];
+    //  const addresses = userData?.addresses || [];
     const [err, setErr] = useState("")
     const dispatch = useDispatch()
 
@@ -61,7 +61,7 @@ const ChekoutAddress = () => {
      }      
       
     }
-   console.log(userData);
+   console.log(userData.userData.addresses);
    console.log(addresses);
    
    
@@ -81,7 +81,7 @@ const ChekoutAddress = () => {
           <div className="flex flex-col items-center m-auto md:w-[80%] w-full flex"> 
          
           <div className="w-full rounded-lg px-2 py-3 m-auto">
-              {!userData.addresses.length === 0? 
+              {!userData ? 
               ( <p className="py-3 text-lg text-gray-800">No Address Saved</p> )
               :
                (userData.addresses.map((address, i) => (
