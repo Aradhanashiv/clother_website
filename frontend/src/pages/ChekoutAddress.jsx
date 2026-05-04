@@ -11,10 +11,13 @@ const ChekoutAddress = () => {
  
     const [showForm, setShowForm] = useState(false)
     const products = useSelector((state)=> state.cart?.products || [])
-      // const {userData} = useSelector((state) => state.user);
-       const { userData, loading } = useSelector((state) => state.user);
+    const { userData, loading } = useSelector((state) => state.user);
     const [err, setErr] = useState("")
     const dispatch = useDispatch()
+
+    const deleteAddress = (address) => {
+      userData.address.filter((i) => i !== address.i)
+    }
 
     const totalPrice = products.reduce((acc, item) => {
       return acc + item.price * item.quantity
@@ -88,7 +91,8 @@ const ChekoutAddress = () => {
                    <p className="text-gray-700">
                     {address.city}, {address.state}, {address.postalCode}
                   </p>
-            <button className="absolute p-1 top-0 right-0 border rounded-sm bg-white border-pink-500">Delete
+            <button className="absolute p-1 top-0 right-0 border rounded-sm bg-white border-pink-500"
+            onClick={()=>deleteAddress(address)}>Delete
              </button>
                   </div>
                   </div>))
