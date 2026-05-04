@@ -51,6 +51,7 @@ const ChekoutAddress = () => {
             //  isDefault: false
            });
            console.log(result.data.addresses);
+           let newadd = result.data.addresses
         //    dispatch(setUserData({
         //   ...userData,
         //  addresses: result.data.addresses}))
@@ -65,6 +66,7 @@ const ChekoutAddress = () => {
     }
    console.log(userData);
    console.log(addresses);
+   console.log(newadd);
    
     
   return (
