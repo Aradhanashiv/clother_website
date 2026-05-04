@@ -11,8 +11,6 @@ const ChekoutAddress = () => {
     const [showForm, setShowForm] = useState(false)
     const products = useSelector((state)=> state.cart?.products || [])
     const {userData} = useSelector((state) => state.user);
-    //  const addresses = userData.addresses
-    //  const addresses = userData?.addresses || [];
     const [err, setErr] = useState("")
     const dispatch = useDispatch()
 
@@ -50,10 +48,8 @@ const ChekoutAddress = () => {
              state: "",
              postalCode: "",
            });
-
-        const res = await axios.get( `${import.meta.env.VITE_BACKEND_URL}/user/user-data`, { withCredentials: true });
-       dispatch(setUserData(result.data.user))  
-       toast.success("Users Address Saved Successfully")
+        dispatch(setaddAddress(result.data.addresses))
+        toast.success("Users Address Saved Successfully")
        setShowForm(false)
      } catch (error) {
       console.log(error);
@@ -61,10 +57,7 @@ const ChekoutAddress = () => {
      }      
       
     }
-   console.log(userData.userData.addresses);
-  //  console.log(addresses);
-   
-   
+   console.log(userData.userData.addresses); 
     
   return (
       <section id="checkout_Address_details">
