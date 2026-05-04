@@ -15,7 +15,6 @@ export const useGetCurrentUser = () => {
         dispatch(setUserData({userData: result.data.user, loading: false}))
       } catch (error) {
         console.log(error);
-        // dispatch(setUserData({ userData: null, loading: false }));
         dispatch(clearUserData())
       }
     }

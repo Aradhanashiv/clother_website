@@ -11,7 +11,7 @@ const userSlice = createSlice({
             mobileNumber: "",
             addresses: []
         },
-
+        
         loading: true
     },
 
