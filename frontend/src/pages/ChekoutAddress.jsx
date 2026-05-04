@@ -58,7 +58,9 @@ const ChekoutAddress = () => {
      }      
       
     }
-  //  console.log(userData.userData.addresses); 
+   console.log(userData.userData.addresses); 
+   console.log(userData.addresses);
+   
     
   return (
       <section id="checkout_Address_details">
