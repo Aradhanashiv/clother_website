@@ -9,6 +9,6 @@ route.post('/signout' , handleSignOut)
 
 route.get('/user-data' ,autheticateUser, handleUserData)
 route.post('/add-user-address' , autheticateUser, handleAddUserAddress)
-route.delete('/delete-address', autheticateUser, handleDeleteUserAddress)
+route.delete('/delete-address/:addressId', autheticateUser, handleDeleteUserAddress)
 
 export default route
