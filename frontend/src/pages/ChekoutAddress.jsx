@@ -63,6 +63,8 @@ const ChekoutAddress = () => {
      }      
       
     }
+   console.log(userData);
+   console.log(addresses);
    
     
   return (
