@@ -49,7 +49,7 @@ const ChekoutAddress = () => {
              postalCode: "",
            });
         const getresult = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/user/user-data` , {withCredentials: true})
-       dispatch(setUserData(getresult.data.user))
+        dispatch(setUserData(getresult.data.user))
         toast.success("Users Address Saved Successfully")
        setShowForm(false)
      } catch (error) {
@@ -58,7 +58,7 @@ const ChekoutAddress = () => {
      }      
       
     }
-   console.log(userData.userData.addresses); 
+  //  console.log(userData.userData.addresses); 
     
   return (
       <section id="checkout_Address_details">
