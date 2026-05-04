@@ -7,17 +7,22 @@ import { setUserData, setaddAddress } from '../redux/userSlice';
 
 
 const ChekoutAddress = () => {
-  
- 
     const [showForm, setShowForm] = useState(false)
     const products = useSelector((state)=> state.cart?.products || [])
     const { userData, loading } = useSelector((state) => state.user);
     const [err, setErr] = useState("")
     const dispatch = useDispatch()
 
-    // const deleteAddress = (address) => {
-    //   userData.address.filter((i) => i !== address.i)
-    // }
+    const deleteAddress = (address) => {
+     try {
+      const result = await axios.delete(`${import.meta.env.VITE_BACKEND_URL}/user/delete-address/${address}` 
+      , {withCredentials:true})
+      dispatch(setaddAddress(result.data.addresses))
+      toast.success("Address deleted successfully");
+     } catch (error) {
+      console.log(error);
+     }
+    }
 
     const totalPrice = products.reduce((acc, item) => {
       return acc + item.price * item.quantity
@@ -53,8 +58,7 @@ const ChekoutAddress = () => {
              state: "",
              postalCode: "",
            });
-        // const getresult = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/user/user-data` , {withCredentials: true})
-        dispatch(setaddAddress(result.data.addresses))
+         dispatch(setaddAddress(result.data.addresses))
         toast.success("Users Address Saved Successfully")
        setShowForm(false)
      } catch (error) {
@@ -91,7 +95,7 @@ const ChekoutAddress = () => {
                    <p className="text-gray-700">
                     {address.city}, {address.state}, {address.postalCode}
                   </p>
-            <button className=" p-1 border rounded-sm bg-white border-pink-500">Delete</button>
+            <button className=" p-1 border rounded-sm bg-white border-pink-500" onClick={()=>deleteAddress(address._id)}>Delete</button>
                   </div>
                   </div>))
                )
