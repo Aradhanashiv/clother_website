@@ -24,10 +24,15 @@ const totalPrice = products.reduce((total, item) => {
     <section id="addToCart">
       <div className="w-full min-h-screen bg-pink-50 p-5">
       <button className="md:px-6 md:py-4 py-2 px-2" onClick={() => navigate("/")}> <FaBackward size={25} /> </button> 
-      <h1 className=" font-semibold text-4xl text-center text-pink-800 mb-8">
-        Items in Your Cart
-      </h1>
+      {products.length === 0 ? 
+      (<h1 className=" font-semibold text-4xl text-center text-pink-800 mb-8">
+       No Items in Your Cart
+      </h1>)
     
+       :(<>
+       <h1 className=" font-semibold text-4xl text-center text-pink-800 mb-8">
+        Items in Your Cart
+ </h1>
        <div className="md:w-[80%] w-full m-auto flex justify-start items-center">
           <MdCheckBox size={25} className="text-pink-500 m-1"/>
           <p className="py-5 text-xl font-bold text-gray-800">{totalQuantiy} TOTAL ITEMS IN YOUR CART</p>
@@ -115,6 +120,7 @@ const totalPrice = products.reduce((total, item) => {
           </div>
        </div>
        </div>
+       </>)}
     </div>
     </section>
   );
