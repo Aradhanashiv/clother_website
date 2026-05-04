@@ -26,7 +26,7 @@ const userSlice = createSlice({
        },
        setaddAddress: (state, action) => {
          if (state.userData?.addresses) {
-       state.userData.addresses.push(action.payload)
+       state.userData.addresses = action.payload;
 }}
     }
 })
