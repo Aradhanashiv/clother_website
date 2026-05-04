@@ -48,8 +48,8 @@ const ChekoutAddress = () => {
              state: "",
              postalCode: "",
            });
-        const result = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/user/user-data` , {withCredentials: true})
-       dispatch(setUserData(result.data.user))
+        const getresult = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/user/user-data` , {withCredentials: true})
+       dispatch(setUserData(getresult.data.user))
         toast.success("Users Address Saved Successfully")
        setShowForm(false)
      } catch (error) {
