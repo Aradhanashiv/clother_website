@@ -12,7 +12,7 @@ export const useGetCurrentUser = () => {
       try {
         const result = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/user/user-data` , {withCredentials: true})
         console.log(result.data.user);
-        dispatch(setUserData({userData: result.data.user, loading: false}))
+        dispatch(setUserData(result.data.user))
       } catch (error) {
         console.log(error);
         dispatch(clearUserData())
