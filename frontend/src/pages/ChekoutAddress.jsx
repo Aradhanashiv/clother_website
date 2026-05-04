@@ -15,9 +15,9 @@ const ChekoutAddress = () => {
     const [err, setErr] = useState("")
     const dispatch = useDispatch()
 
-    const deleteAddress = (address) => {
-      userData.address.filter((i) => i !== address.i)
-    }
+    // const deleteAddress = (address) => {
+    //   userData.address.filter((i) => i !== address.i)
+    // }
 
     const totalPrice = products.reduce((acc, item) => {
       return acc + item.price * item.quantity
@@ -92,7 +92,7 @@ const ChekoutAddress = () => {
                     {address.city}, {address.state}, {address.postalCode}
                   </p>
             <button className="absolute p-1 top-0 right-0 border rounded-sm bg-white border-pink-500"
-            onClick={()=>deleteAddress(address)}>Delete
+           >Delete
              </button>
                   </div>
                   </div>))
