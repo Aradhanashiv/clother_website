@@ -62,7 +62,7 @@ const ChekoutAddress = () => {
       
     }
    console.log(userData.userData.addresses);
-   console.log(addresses);
+  //  console.log(addresses);
    
    
     
