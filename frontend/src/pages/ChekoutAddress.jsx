@@ -95,7 +95,8 @@ const ChekoutAddress = () => {
                    <p className="text-gray-700">
                     {address.city}, {address.state}, {address.postalCode}
                   </p>
-            <button className=" p-1 border rounded-sm bg-white border-pink-500" onClick={()=>deleteAddress(address._id)}>Delete</button>
+            <button className=" p-1 border rounded-sm bg-white border-pink-500" 
+            onClick={()=>deleteAddress(address._id)}>Delete</button>
                   </div>
                   </div>))
                )
