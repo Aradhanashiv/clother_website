@@ -89,7 +89,8 @@ const ChekoutAddress = () => {
               ( <p className="py-3 text-lg text-gray-800">No Address Saved</p> )
               :
                (userData.addresses.map((address, i) => (
-              <div key={i} onClick={()=>setSelectedAddressId(address._id)} className="flex border border-gray-300 rounded-lg mt-1  m-auto px-3 py-4 bg-white/70">
+              <div key={i} onClick={()=>setSelectedAddressId(address._id)}
+               className={`${selectedAddressId ? "border-black" : "border-gray-300"} flex border  rounded-lg mt-1  m-auto px-3 py-4 bg-white/70`}>
                 <div className="w-full px-4">
                   <p className="font-bold">{address.fullName}</p>
                   <p className="text-gray-700">
@@ -102,12 +103,9 @@ const ChekoutAddress = () => {
             onClick={()=>deleteAddress(address._id)}>Delete</button>
                   </div>
                   </div>))
-               )
-              
+               )   
          }
               
-            
-
           <div className="w-full rounded border  border-gray-300 bg-white/90 px-5 py-4 mt-[20px]">
           <p className="font-bold py-3 text-gray-800">Price Details ({products.length})</p>
           <div className="flex items-center justify-between">
