@@ -4,12 +4,15 @@ import { RxCross2 } from "react-icons/rx";
 import { toast } from "react-toastify"
 import axios from 'axios';
 import { setUserData, setaddAddress } from '../redux/userSlice';
+import { useNavigate } from 'react-router-dom';
 
 
 const ChekoutAddress = () => {
+    const navigate = useNavigate()
     const [showForm, setShowForm] = useState(false)
     const products = useSelector((state)=> state.cart?.products || [])
     const { userData, loading } = useSelector((state) => state.user);
+    const [selectedAddressId, setSelectedAddressId] = useState(null);
     const [err, setErr] = useState("")
     const dispatch = useDispatch()
 
@@ -86,7 +89,7 @@ const ChekoutAddress = () => {
               ( <p className="py-3 text-lg text-gray-800">No Address Saved</p> )
               :
                (userData.addresses.map((address, i) => (
-              <div key={i} className="flex border border-gray-300 rounded-lg mt-1  m-auto px-3 py-4 bg-white/70">
+              <div key={i} onClick={()=>setSelectedAddressId(address._id)} className="flex border border-gray-300 rounded-lg mt-1  m-auto px-3 py-4 bg-white/70">
                 <div className="w-full px-4">
                   <p className="font-bold">{address.fullName}</p>
                   <p className="text-gray-700">
@@ -124,8 +127,8 @@ const ChekoutAddress = () => {
           <p>{totalPrice}</p>
           </div>
           <div className="text-right mt-5">
-          <button className="bg-pink-700 border-none px-10 py-2 text-white rounded-lg font-semibold " 
-          >Continue</button>
+          <button disabled={!selectedAddressId} className="bg-pink-700 border-none px-10 py-2 text-white rounded-lg font-semibold " 
+         onClick={()=>navigate('/order-summary-page')} >Continue</button>
           </div>
           </div>
          
