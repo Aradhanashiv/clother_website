@@ -25,7 +25,7 @@ app.use('/user' , userRoute)
 app.use('/product' , productRoute)
 app.use('/category' , categoryRoute)
 app.use('/search', searchRoute)
-app.use('/payment', paymentRoute)
+app.use('/order', paymentRoute)
 
 connectMongoDB()
 app.listen(port, ()=>{

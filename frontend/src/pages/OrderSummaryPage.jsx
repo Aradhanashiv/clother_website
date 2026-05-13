@@ -1,15 +1,22 @@
 import React from 'react'
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { RxCross2 } from "react-icons/rx";
+import { createRazorpayOrder } from '../redux/order/OrderThunk';
 
 
 const OrderSummaryPage = () => {
 
-
     const {products, totalQuantiy} = useSelector((state) => state.cart);
+    const dispatch = useDispatch()
     const totalPrice = products.reduce((total, item) => {
     return total + item.price * item.quantity
     },0)
+
+   const payNow = async () => {
+    console.log("paynow clicked, create order controller request should be initiate");
+      const result = await dispatch(createRazorpayOrder(totalPrice))
+      console.log(result);
+   }
 
   return (
       <section id="order-summary-page">
@@ -19,7 +26,6 @@ const OrderSummaryPage = () => {
           </h1>
             {products.map((item, i) => (
                     <div className="flex border border-gray-300 rounded-lg mt-1  m-auto px-3 py-4 bg-white/70" key={item.productName}>
-                     
                       <div className="w-30 ">
                         <img src={item.productImage[0]} alt="" className="rounded" />
                       </div>
@@ -55,7 +61,7 @@ const OrderSummaryPage = () => {
           </div>
           <div className="text-right mt-5">
           <button className="bg-pink-700 border-none px-10 py-2 text-white rounded-lg font-semibold " 
-        >Pay Now</button>
+        onClick={()=>payNow()}>Pay Now</button>
           </div>
           </div>
           </div>
