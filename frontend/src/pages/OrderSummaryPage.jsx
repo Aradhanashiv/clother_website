@@ -54,8 +54,8 @@ const OrderSummaryPage = () => {
           <p>{totalPrice}</p>
           </div>
           <div className="text-right mt-5">
-          <button disabled={!selectedAddressId} className="bg-pink-700 border-none px-10 py-2 text-white rounded-lg font-semibold " 
-         onClick={()=>navigate('/order-summary-page')} >Continue</button>
+          <button className="bg-pink-700 border-none px-10 py-2 text-white rounded-lg font-semibold " 
+        >Pay Now</button>
           </div>
           </div>
           </div>
