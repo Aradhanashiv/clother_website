@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from "react-redux";
+import { RxCross2 } from "react-icons/rx";
 
 
 const OrderSummaryPage = () => {
@@ -25,24 +26,9 @@ const OrderSummaryPage = () => {
                         <p className="text-gray-700">
                           {item.description.split(" ").slice(0, 7).join(" ")}...
                         </p>
-                        <div className="flex items-center">
-                        <button className="px-2 py-1  text-white text-semibold rounded-full bg-pink-500 mt-2"
-                        onClick={() => dispatch(IncreaseItemQuantity(item._id))}>
-                        +
-                        </button>
-                        <p className="m-3">{item.quantity}</p>
-                        <button className="px-2 py-1 text-white text-semibold rounded-full bg-pink-500 mt-2"
-                        onClick={() => dispatch(DecreaseQuantity(item._id))}>
-                        -
-                        </button>
-                        </div>
                         <p className="mt-1 font-bold text-gray-700">₹{(item.quantity) * (item.price)}</p>
                       </div>
-                      <div className="">
-                      <RxCross2 size={25} onClick={()=>{
-                       setSelectedId(item),
-                       setShowConfirm(true)}}/>
-                       </div>
+                     
           
                     </div>
                   ))}
