@@ -1,13 +1,73 @@
 import React from 'react'
 
 const OrderSummaryPage = () => {
+
+
+    const {products, totalQuantiy} = useSelector((state) => state.cart);
+
+
   return (
       <section id="order-summary-page">
           <div className="w-full min-h-screen bg-pink-50 p-5">
           <h1 className=" font-semibold text-4xl text-center text-pink-800 mb-8">
            Order Summary
           </h1>
+            {products.map((item, i) => (
+                    <div className="flex border border-gray-300 rounded-lg mt-1  m-auto px-3 py-4 bg-white/70" key={item.productName}>
+                     
+                      <div className="w-30 ">
+                        <img src={item.productImage[0]} alt="" className="rounded" />
+                      </div>
+                      <div className="w-full px-4">
+                        <p className="font-bold">{item.productName}</p>
+                        <p className="text-gray-700">
+                          {item.description.split(" ").slice(0, 7).join(" ")}...
+                        </p>
+                        <div className="flex items-center">
+                        <button className="px-2 py-1  text-white text-semibold rounded-full bg-pink-500 mt-2"
+                        onClick={() => dispatch(IncreaseItemQuantity(item._id))}>
+                        +
+                        </button>
+                        <p className="m-3">{item.quantity}</p>
+                        <button className="px-2 py-1 text-white text-semibold rounded-full bg-pink-500 mt-2"
+                        onClick={() => dispatch(DecreaseQuantity(item._id))}>
+                        -
+                        </button>
+                        </div>
+                        <p className="mt-1 font-bold text-gray-700">₹{(item.quantity) * (item.price)}</p>
+                      </div>
+                      <div className="">
+                      <RxCross2 size={25} onClick={()=>{
+                       setSelectedId(item),
+                       setShowConfirm(true)}}/>
+                       </div>
           
+                    </div>
+                  ))}
+
+            <div className="w-full rounded border  border-gray-300 bg-white/90 px-5 py-4 mt-[20px]">
+          <p className="font-bold py-3 text-gray-800">Price Details ({products.length})</p>
+          <div className="flex items-center justify-between">
+          <p>Total MRP</p>
+          <p>{totalPrice}</p>
+          </div>
+          <div className="flex items-center justify-between mt-3">
+          <p>Discount</p>
+          <p>0</p>
+          </div>
+          <div className="flex items-center justify-between mt-3">
+          <p>Platform fee</p>
+          <p>0</p>
+          </div>
+          <div className="flex items-center justify-between mt-3 border-t border-gray-500">
+          <p>Total Amount</p>
+          <p>{totalPrice}</p>
+          </div>
+          <div className="text-right mt-5">
+          <button disabled={!selectedAddressId} className="bg-pink-700 border-none px-10 py-2 text-white rounded-lg font-semibold " 
+         onClick={()=>navigate('/order-summary-page')} >Continue</button>
+          </div>
+          </div>
           </div>
       </section>    
   )
