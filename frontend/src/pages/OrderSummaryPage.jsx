@@ -7,7 +7,9 @@ const OrderSummaryPage = () => {
 
 
     const {products, totalQuantiy} = useSelector((state) => state.cart);
-
+    const totalPrice = products.reduce((total, item) => {
+    return total + item.price * item.quantity
+    },0)
 
   return (
       <section id="order-summary-page">
