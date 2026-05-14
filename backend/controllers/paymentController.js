@@ -2,25 +2,25 @@ import { razorPayInstance } from "../config/razorpay.js";
 import Order from "../models/orderModel.js";
 
 // export const placeOrder = async(req,res) => {
-   try { 
-    const {items, shippingAddress, paymentMethod, totalAmount} = req.body
-    if(!items || !items.length === 0){
-      return res.status(400).json({success: false, message: "No Items in the order"})  
-    }
-    const order = new Order.create({
-        user: req.user._id,
-   items,
-   shippingAddress,
-   paymentMethod,
-   paymentInfo,
-   totalAmount,
-    }) 
-   const createdorder = await order.save();
-   return res.status(201).json(createdorder)
-   }
-    catch (error) {
-    res.status(500).json({success: false, message: "Error in creating order "})
-   }
+   // try { 
+   //  const {items, shippingAddress, paymentMethod, totalAmount} = req.body
+   //  if(!items || !items.length === 0){
+   //    return res.status(400).json({success: false, message: "No Items in the order"})  
+   //  }
+   //  const order = new Order.create({
+   //      user: req.user._id,
+   // items,
+   // shippingAddress,
+   // paymentMethod,
+   // paymentInfo,
+   // totalAmount,
+   //  }) 
+   // const createdorder = await order.save();
+   // return res.status(201).json(createdorder)
+   // }
+   //  catch (error) {
+   //  res.status(500).json({success: false, message: "Error in creating order "})
+   // }
 // }
 
 
