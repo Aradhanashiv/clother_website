@@ -30,8 +30,8 @@ const OrderSummaryPage = () => {
         alert("Payment Successful");
       },
       prefill: {
-        name: userData.userData.name,
-        email: userData.userData.email,
+        name: userData.name,
+        email: userData.email,
       },
       theme: {
         color: "#3399cc",
