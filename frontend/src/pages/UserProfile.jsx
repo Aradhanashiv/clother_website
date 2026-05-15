@@ -31,7 +31,7 @@ const UserProfile = () => {
             className="mt-2 border rounded-lg md:px-2 md:py-3 px-1 py-2  
       bg-gray-200 border-gray-500 hover:bg-gray-200/50 mt-3 text-gray-500"
           >
-            {userData.userData.email}{" "}
+            {userData.email}{" "}
           </p>
         </div>
 
@@ -39,12 +39,12 @@ const UserProfile = () => {
           <p className="font-semibold">FullName</p>
 
           <p className="mt-2 border rounded-lg md:px-2 md:py-3 px-1 py-2 bg-gray-200 border-gray-500 hover:bg-gray-200/50 mt-3 text-gray-500">
-            {userData.userData.name}{" "}
+            {userData.name}{" "}
           </p>
           <p className="font-semibold mt-4">Mobile</p>
 
           <p className="mt-2 border rounded-lg md:px-2 md:py-3 px-1 py-2  bg-gray-200 border-gray-500 hover:bg-gray-200/50 mt-3 text-gray-500">
-            {userData.userData.mobileNumber}{" "}
+            {userData.mobileNumber}{" "}
           </p>
         </div>
       </div>
