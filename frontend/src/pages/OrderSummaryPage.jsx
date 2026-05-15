@@ -16,6 +16,34 @@ const OrderSummaryPage = () => {
     console.log("paynow clicked, create order controller request should be initiate");
       const result = await dispatch(createRazorpayOrder(totalPrice))
       console.log(result);
+      const order = result.payload;
+       const options = {
+      key: import.meta.env.VITE_RAZORPAY_KEY_ID,
+      amount: order.amount,
+      currency: order.currency,
+      name: "My Store",
+      description: "Order Payment",
+      order_id: order.id,
+      handler: async function (response) {
+        console.log(response);
+        alert("Payment Successful");
+      },
+      prefill: {
+        name: "Customer",
+        email: "customer@gmail.com",
+      },
+      theme: {
+        color: "#3399cc",
+      },
+    };
+
+    console.log(window.Razorpay);
+
+    const razor = new window.Razorpay(options);
+
+    console.log("Opening Razorpay Popup");
+
+    razor.open();
    }
 
   return (
