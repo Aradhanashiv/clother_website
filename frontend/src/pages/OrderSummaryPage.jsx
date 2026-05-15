@@ -7,6 +7,7 @@ import { createRazorpayOrder } from '../redux/order/OrderThunk';
 const OrderSummaryPage = () => {
 
     const {products, totalQuantiy} = useSelector((state) => state.cart);
+     const { userData } = useSelector((state) => state.user);
     const dispatch = useDispatch()
     const totalPrice = products.reduce((total, item) => {
     return total + item.price * item.quantity
@@ -29,8 +30,8 @@ const OrderSummaryPage = () => {
         alert("Payment Successful");
       },
       prefill: {
-        name: "Customer",
-        email: "customer@gmail.com",
+        name: userData.userData.name,
+        email: userData.userData.email,
       },
       theme: {
         color: "#3399cc",
