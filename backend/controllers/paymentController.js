@@ -35,7 +35,7 @@ export const createOrder = async(req,res) => {
     const order = await razorPayInstance.orders.create(options);
     res.status(200).json({success: true, order})
    } catch (error) {
-    res.status(500).json({success: false, message: "Error in creating order "})
+    res.status(500).json({success: false, message: error.message})
    }
 }
 

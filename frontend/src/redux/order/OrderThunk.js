@@ -10,7 +10,7 @@ export const createRazorpayOrder = createAsyncThunk(
         const { data } = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/order/create-order`, { amount }  );
          return data.order
         } catch (error) {
-        return thunkAPI.rejectWithValue(error.response.data.message);
+        return thunkAPI.rejectWithValue(error.response?.data?.message || error.message);
         }
     }
 )
