@@ -15,8 +15,7 @@ const AddToCart = () => {
   const [selectedId, setSelectedId] = useState(null)
   const [showConfirm, setShowConfirm] = useState(false)
 
-   
-const totalPrice = products.reduce((total, item) => {
+  const totalPrice = products.reduce((total, item) => {
     return total + item.price * item.quantity
   },0)
 
@@ -72,7 +71,7 @@ const totalPrice = products.reduce((total, item) => {
           </div>
         ))}
 
-        {showConfirm && selectedId &&  <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
+        {showConfirm && selectedId && <div className="fixed inset-0 flex items-center justify-center bg-black/50 z-50">
          <div className="bg-white/95 shadow md:w-[35%] w-[90%] rounded m-auto px-3 py-4">
          <div className="flex">
           <img src={selectedId.productImage[0]} alt="" className="w-10"/>

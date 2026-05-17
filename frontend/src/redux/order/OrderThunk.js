@@ -14,3 +14,14 @@ export const createRazorpayOrder = createAsyncThunk(
         }
     }
 )
+
+export const verifyPayment = createAsyncThunk(
+    "order/verifyPayment",
+    async(paymentData, thunkAPI) => {
+        try {
+            const result = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/order/verify-order` , {paymentData})
+        } catch (error) {
+        return thunkAPI.rejectWithValue(error.response?.data?.message || error.message)
+        }
+    }
+)

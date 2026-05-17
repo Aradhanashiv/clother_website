@@ -1,13 +1,16 @@
 import React from 'react'
 import { useDispatch, useSelector } from "react-redux";
 import { RxCross2 } from "react-icons/rx";
-import { createRazorpayOrder } from '../redux/order/OrderThunk';
+import { createRazorpayOrder, verifyPayment } from '../redux/order/OrderThunk';
+import { clearCart } from '../redux/cartSlice';
+import { useNavigate } from 'react-router-dom';
 
 
 const OrderSummaryPage = () => {
 
     const {products, totalQuantiy} = useSelector((state) => state.cart);
-     const { userData } = useSelector((state) => state.user);
+    const navigate =  useNavigate()
+    const { userData } = useSelector((state) => state.user);
     const dispatch = useDispatch()
     const totalPrice = products.reduce((total, item) => {
     return total + item.price * item.quantity
@@ -18,33 +21,42 @@ const OrderSummaryPage = () => {
       const result = await dispatch(createRazorpayOrder(totalPrice))
       console.log(result);
       const order = result.payload;
-       const options = {
+      const options = {
       key: import.meta.env.VITE_RAZORPAY_KEY_ID,
       amount: order.amount,
       currency: order.currency,
-      name: "My Store",
+      name: "Clother Store",
       description: "Order Payment",
       order_id: order.id,
+
       handler: async function (response) {
         console.log(response);
-        alert("Payment Successful");
+       const verifyResult = await dispatch(verifyPayment({razorpay_order_id: response.razorpay_order_id, razorpay_payment_id: response.razorpay_payment_id, razorpay_signature: response.razorpay_signature } ))
+        console.log(result);
+
+         if(verifyResult.payload.success){
+          alert("Payment Verified Successfully");
+          dispatch(clearCart())
+          navigate('/payment-successful')
+         }
       },
+
       prefill: {
         name: userData.name,
         email: userData.email,
       },
       theme: {
-        color: "#3399cc",
+        color: "#ff009d",
       },
-    };
-
+    }
     console.log(window.Razorpay);
-
     const razor = new window.Razorpay(options);
-
     console.log("Opening Razorpay Popup");
-
     razor.open();
+     razor.on("payment.failed", function (response) {
+    console.log(response);
+    alert(response.error.description);
+  });
    }
 
   return (
@@ -54,19 +66,17 @@ const OrderSummaryPage = () => {
            Order Summary
           </h1>
             {products.map((item, i) => (
-                    <div className="flex border border-gray-300 rounded-lg mt-1  m-auto px-3 py-4 bg-white/70" key={item.productName}>
-                      <div className="w-30 ">
-                        <img src={item.productImage[0]} alt="" className="rounded" />
-                      </div>
-                      <div className="w-full px-4">
-                        <p className="font-bold">{item.productName}</p>
-                        <p className="text-gray-700">
+                <div className="flex border border-gray-300 rounded-lg mt-1  m-auto px-3 py-4 bg-white/70" key={item.productName}>
+                  <div className="w-30 ">
+                    <img src={item.productImage[0]} alt="" className="rounded" />
+                  </div>
+                    <div className="w-full px-4">
+                      <p className="font-bold">{item.productName}</p>
+                       <p className="text-gray-700">
                           {item.description.split(" ").slice(0, 7).join(" ")}...
                         </p>
                         <p className="mt-1 font-bold text-gray-700">₹{(item.quantity) * (item.price)}</p>
                       </div>
-                     
-          
                     </div>
                   ))}
 

@@ -1,8 +1,10 @@
 import express from 'express'
-import {createOrder} from '../controllers/paymentController.js'
+import {createOrder, verifyOrder} from '../controllers/paymentController.js'
 const route = express.Router()
 
 
 route.post('/create-order' , createOrder)
+route.post('/verify-order' , verifyOrder)
+
 
 export default route
