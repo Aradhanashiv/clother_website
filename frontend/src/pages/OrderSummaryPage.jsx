@@ -37,10 +37,14 @@ const OrderSummaryPage = () => {
          razorpay_signature: response.razorpay_signature } ))
         console.log(verifyResult);
 
-         if(verifyResult.payload.success){
+         if(verifyResult?.payload?.success){
           alert("Payment Verified Successfully");
           dispatch(clearCart())
           navigate('/payment-successful')
+         }
+         else{
+          console.log("Verification Failed", verifyResult);
+          
          }
       },
 
