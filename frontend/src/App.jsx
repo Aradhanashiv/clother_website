@@ -17,6 +17,7 @@ import AboutUs from './pages/AboutUs.jsx'
 import TermsConditions from './pages/TermsConditions.jsx'
 import ChekoutAddress from './pages/ChekoutAddress.jsx'
 import OrderSummaryPage from './pages/OrderSummaryPage.jsx'
+import PaymentSuccessful from './pages/PaymentSuccessful.jsx'
 
 const App = () => {
   useGetCurrentUser()
@@ -41,7 +42,7 @@ const App = () => {
       <Route path="/term-and-condition" element={<TermsConditions/>} />
       <Route path="/checkout-address" element={<ChekoutAddress/>} />
       <Route path="/order-summary-page" element={<OrderSummaryPage/>} />
-       <Route path="/payment-successful" element={<OrderSummaryPage/>} />
+       <Route path="/payment-successful" element={<PaymentSuccessful/>} />
     </Routes>
     
     </>
